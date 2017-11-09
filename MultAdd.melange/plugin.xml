@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?eclipse version="3.4"?><plugin>
+  
+   <extension point="org.eclipse.emf.ecore.generated_package">
+    <!-- @generated MultAddLangMT -->
+    <package class="multadd.multaddlangmt.expr_cst_mult_add.Expr_cst_mult_addPackage" genModel="model-gen/MultAddLangMT.genmodel" uri="http://multadd.multaddlangmt/expr_cst_mult_add/"/>
+  </extension>
+  <extension point="fr.inria.diverse.melange.modeltype">
+    <modeltype id="multadd.MultAddLangMT" uri="http://multadd.multaddlangmt/"/>
+  </extension>
+  <extension point="fr.inria.diverse.melange.language">
+    <language aspects="" entryPoints="" exactType="multadd.MultAddLangMT" id="multadd.MultAddLang" uri="http://multadd.multaddlang/expr_cst_mult_add/">
+      <adapter class="multadd.multaddlang.adapters.multaddlangmt.MultAddLangAdapter" modeltypeId="multadd.MultAddLangMT"/>
+    </language>
+  </extension>
+</plugin>

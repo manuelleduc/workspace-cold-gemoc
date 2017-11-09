@@ -1,0 +1,7 @@
+package mult
+
+language MultLang {
+	syntax "platform:/resource/Mult.as/model/mult.ecore" renaming {"mult" to "exprconcern"}
+	syntax "platform:/resource/Cst.as/model/cst.ecore" renaming {"cst" to "exprconcern"}
+	syntax "platform:/resource/Expr.as/model/expr.ecore" renaming { "expr" to "exprconcern" }
+}

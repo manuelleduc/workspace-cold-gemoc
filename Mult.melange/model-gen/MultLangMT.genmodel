@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="ASCII"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/Mult.melange/src-gen" modelPluginID="Mult.melange" modelName="MultLangMT" complianceLevel="7.0" copyrightFields="false">
+  <foreignModel>platform:/resource/Mult.melange/model-gen/MultLangMT.ecore</foreignModel>
+  <genPackages prefix="Exprconcern" basePackage="mult.multlangmt" disposableProviderFactory="true">
+    <ecorePackage href="MultLangMT.ecore#/"/>
+    <genClasses image="false">
+      <ecoreClass href="MultLangMT.ecore#//Expr"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="MultLangMT.ecore#//Mult"/>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="MultLangMT.ecore#//Mult/left"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="MultLangMT.ecore#//Mult/right"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="MultLangMT.ecore#//Cst"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="MultLangMT.ecore#//Cst/value"/>
+      </genFeatures>
+    </genClasses>
+  </genPackages>
+  <usedGenPackages href="../../org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore"/>
+</genmodel:GenModel>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?eclipse version="3.4"?><plugin>
+  <extension point="fr.inria.diverse.melange.modeltype">
+    <modeltype id="varadd.VarAddLangMT" uri="http://varadd.varaddlangmt/"/>
+  </extension>
+  <extension point="fr.inria.diverse.melange.language">
+    <language aspects="" entryPoints="" exactType="varadd.VarAddLangMT" id="varadd.VarAddLang" uri="http://varadd.varaddlang/exprconcern/">
+      <adapter class="varadd.varaddlang.adapters.varaddlangmt.VarAddLangAdapter" modeltypeId="varadd.VarAddLangMT"/>
+    </language>
+  </extension>
+</plugin>

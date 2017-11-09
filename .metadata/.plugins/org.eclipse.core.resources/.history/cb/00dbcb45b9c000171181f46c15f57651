@@ -1,0 +1,27 @@
+grammar fr.mleduc.ExplicitOperations with org.eclipse.xtext.common.Terminals
+
+generate explicitOperations "http://www.mleduc.fr/ExplicitOperations"
+
+Model:
+	(languages+=Language | operations+=Operation)*;
+
+Operation:
+	'operation' name=ID
+	('inputs'
+	inputs+=OperationParameter*)?
+	('outputs'
+	outputs+=OperationParameter*)?;
+
+OperationParameter:
+	name=ID ':' type=[Language|ID];
+
+Language:
+	'language' name=ID
+	dependencies+=LanguageDependency*;
+
+LanguageDependency:
+	name=ID ':' type=[Language|ID];
+	//
+//Artifact:
+//	'artifact' name=ID ':' type=[Language|ID];
+

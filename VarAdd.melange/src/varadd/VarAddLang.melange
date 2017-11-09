@@ -1,0 +1,6 @@
+package varadd
+
+language VarAddLang {
+	syntax "platform:/resource/Var.as/model/variable.ecore" renaming {"variable" to "exprconcern"}
+	syntax "platform:/resource/Add.as/model/add.ecore" renaming {"add" to "exprconcern"}
+}

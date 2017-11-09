@@ -1,0 +1,5 @@
+# List of the Java classes that have been aspectized and name of the aspect classes separated by comma
+	abc.model.A = abc.k3.AAspect
+	model.B = abc.k3.BAspect
+	model.A = abc.k3.AAspect
+	model.C = abc.k3.CAspect, abc.k3.C2Aspect

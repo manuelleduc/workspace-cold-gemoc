@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;ApplicationCSV.xtend&apos; to &apos;ApplicationCSV.xtend&apos;&#x0A;- Original project: &apos;csv2md&apos;&#x0A;- Destination element: &apos;ApplicationCSV.xtend&apos;&#x0A;- Original element: &apos;ApplicationCSV.xtend&apos;" description="Copy file" element1="src/main/java/csv2md/ApplicationCSV.xtend" files="1" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1509958275151" target="/csv2md/src/main/java/csv2md/ApplicationCSV.xtend" units="0" version="1.0"/>
+</session>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel"
+    modelDirectory="/gfsm.model/src-gen" creationIcons="false" editDirectory="/gfsm.model.edit/src-gen"
+    editorDirectory="/gfsm.model.editor/src-gen" modelPluginID="gfsm.model" modelName="Gfsm"
+    rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" codeFormatting="true"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="8.0" copyrightFields="false"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>gfsm.ecore</foreignModel>
+  <testsDirectory xsi:nil="true"/>
+  <genPackages prefix="Gfsm" basePackage="gfsm.model" disposableProviderFactory="true"
+      ecorePackage="gfsm.ecore#/">
+    <genClasses ecoreClass="gfsm.ecore#//Transition">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference gfsm.ecore#//Transition/from"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference gfsm.ecore#//Transition/to"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gfsm.ecore#//Transition/event"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gfsm.ecore#//Transition/guard"/>
+    </genClasses>
+    <genClasses ecoreClass="gfsm.ecore#//State">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference gfsm.ecore#//State/outgoings"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference gfsm.ecore#//State/incommings"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gfsm.ecore#//State/name"/>
+    </genClasses>
+    <genClasses ecoreClass="gfsm.ecore#//Machine">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gfsm.ecore#//Machine/states"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gfsm.ecore#//Machine/transitions"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference gfsm.ecore#//Machine/initialState"/>
+    </genClasses>
+    <genClasses ecoreClass="gfsm.ecore#//Guard">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gfsm.ecore#//Guard/value"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

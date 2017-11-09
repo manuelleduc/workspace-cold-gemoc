@@ -1,0 +1,31 @@
+package fr.mleduc.generator
+
+import fr.mleduc.explicitOperations.Model
+import org.jgrapht.Graph
+import org.jgrapht.graph.DefaultEdge
+import org.jgrapht.graph.SimpleDirectedGraph
+import org.jgrapht.traverse.DepthFirstIterator
+
+class LanguageBuildPlanGenerator {
+	def buildPlan(Model model) {
+		val languages = model.languages.toList
+
+		val Graph<String, DefaultEdge> graph = new SimpleDirectedGraph(DefaultEdge)
+
+		languages.forEach[graph.addVertex(it.name)]
+
+		for (l : languages) {
+			for (d : l.dependencies) {
+				if (l.name != d.type.name)
+					graph.addEdge(l.name, d.type.name)
+			}
+		}
+		val dfi = new DepthFirstIterator(graph).toList.reverse
+
+		'''
+			«FOR x : dfi»
+				«x»
+			«ENDFOR»
+		'''
+	}
+}

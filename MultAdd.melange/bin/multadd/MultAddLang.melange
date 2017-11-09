@@ -1,0 +1,8 @@
+package multadd
+
+language MultAddLang {
+	syntax "platform:/resource/Add.as/model/add.ecore" renaming {"add" to "expr_cst_mult_add"}
+	syntax "platform:/resource/Mult.as/model/mult.ecore" renaming {"mult" to "expr_cst_mult_add"}
+	syntax "platform:/resource/Cst.as/model/cst.ecore" renaming {"cst" to "expr_cst_mult_add"}
+	syntax "platform:/resource/Expr.as/model/expr.ecore" renaming { "expr" to "expr_cst_mult_add" }
+}

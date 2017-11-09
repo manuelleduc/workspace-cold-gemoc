@@ -1,0 +1,15 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: varadd.cs.ide
+Bundle-Vendor: My Company
+Bundle-Version: 1.0.0.qualifier
+Bundle-SymbolicName: varadd.cs.ide; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: varadd.cs,
+ varadd.varaddlang,
+ org.eclipse.xtext.ide,
+ org.eclipse.xtext.xbase.ide
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Export-Package: varadd.cs.ide.contentassist.antlr,
+ varadd.cs.ide.contentassist.antlr.internal
+

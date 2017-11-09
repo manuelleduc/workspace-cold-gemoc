@@ -1,0 +1,8 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Rev
+Bundle-SymbolicName: cst.rev
+Bundle-Version: 1.0.0.qualifier
+Export-Package: cst.rev
+Require-Bundle: cst.cstlang;bundle-version="0.1.0",
+ eval.operation;visibility:=reexport

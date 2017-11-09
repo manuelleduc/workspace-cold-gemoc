@@ -1,0 +1,7 @@
+package fr.mleduc.generator
+
+class LanguageBuildPlanGenerator {
+	def buildPlan() {
+		''''''
+	}
+}

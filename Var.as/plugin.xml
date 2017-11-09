@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated var -->
+      <package
+            uri="http://www.example.org/var"
+            class="var.VarPackage"
+            genModel="model/variable.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated variable -->
+      <package
+            uri="http://www.example.org/variable"
+            class="variable.VariablePackage"
+            genModel="model/variable.genmodel"/>
+   </extension>
+
+</plugin>

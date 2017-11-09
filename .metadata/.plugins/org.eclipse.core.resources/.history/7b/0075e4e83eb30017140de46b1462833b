@@ -1,0 +1,13 @@
+package expr.eval.sem
+
+import expr.Expr
+import fr.inria.diverse.k3.al.annotationprocessor.Aspect
+
+
+import static extension expr.eval.sem.ExprAspect.*
+
+@Aspect(className=Expr)
+abstract class ExprEvalAspect {
+	def long eval()
+}
+ 

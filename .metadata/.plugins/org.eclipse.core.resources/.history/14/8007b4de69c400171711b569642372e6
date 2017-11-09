@@ -1,0 +1,9 @@
+package abc.k3
+
+import fr.inria.diverse.k3.al.annotationprocessor.Aspect
+
+import model.A
+
+@Aspect(className=A)
+class MyAspect {
+}

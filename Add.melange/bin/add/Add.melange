@@ -1,0 +1,7 @@
+package add
+
+language AddLang {
+	syntax "platform:/resource/Add.as/model/add.ecore" renaming {"add" to "expr_cst_add"}
+	syntax "platform:/resource/Cst.as/model/cst.ecore" renaming {"cst" to "expr_cst_add"}
+	syntax "platform:/resource/Expr.as/model/expr.ecore" renaming { "expr" to "expr_cst_add" }
+}

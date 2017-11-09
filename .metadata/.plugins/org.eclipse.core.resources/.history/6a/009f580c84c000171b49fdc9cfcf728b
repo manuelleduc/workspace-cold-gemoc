@@ -1,0 +1,13 @@
+package csv2md
+
+class ApplicationHTML {
+
+	def void run() {
+		val targetDirectory = "/tmp/generation_html"
+		val readFile = "/tmp/reuse.csv"
+	}
+
+	def static void main(String[] args) {
+		new ApplicationHTML().run
+	}
+}

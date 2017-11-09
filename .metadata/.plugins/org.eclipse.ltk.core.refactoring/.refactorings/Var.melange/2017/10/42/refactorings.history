@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename package &apos;var&apos; to &apos;varlang&apos;&#x0A;- Original project: &apos;Var.melange&apos;&#x0A;- Original element: &apos;Var.melange/src/var&apos;&#x0A;- Renamed element: &apos;Var.melange/src/varlang&apos;&#x0A;- Update references to refactored element&#x0A;- Update textual occurrences in comments and strings" description="Rename package &apos;var&apos;" flags="589830" hierarchical="false" id="org.eclipse.jdt.ui.rename.package" input="/src&lt;var" name="varlang" qualified="false" references="true" stamp="1508319787937" textual="false" version="1.0"/>
+</session>

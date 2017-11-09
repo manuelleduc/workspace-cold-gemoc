@@ -1,0 +1,20 @@
+package abc.k3
+
+class Main {
+	def static void main(String[] args) {
+		val a = model.ModelFactory::eINSTANCE.createA() => [
+			val b1 = model.ModelFactory::eINSTANCE.createB() => [
+			val c1 = model.ModelFactory::eINSTANCE.createC()
+			val c1 = model.ModelFactory::eINSTANCE.createC()
+				addAll(c1,c2)
+			]
+			val b2 = model.ModelFactory::eINSTANCE.createB() => [
+			val c21 = model.ModelFactory::eINSTANCE.createC()
+			val c22 = model.ModelFactory::eINSTANCE.createC()
+				
+			]
+			bs.addAll(b1, b2)
+
+		]
+	}
+}

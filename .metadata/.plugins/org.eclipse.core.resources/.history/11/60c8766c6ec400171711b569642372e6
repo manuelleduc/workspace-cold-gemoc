@@ -1,0 +1,7 @@
+package abc.model
+
+import java.util.List
+
+class B {
+	public val List<C> cs = newArrayList()
+}

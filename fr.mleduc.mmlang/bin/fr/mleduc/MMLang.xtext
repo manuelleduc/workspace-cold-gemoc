@@ -1,0 +1,30 @@
+grammar fr.mleduc.MMLang with org.eclipse.xtext.common.Terminals
+
+generate mMLang "http://www.mleduc.fr/MMLang"
+
+Metamodel:
+	(concrete?='concrete')? 'package' name=ID
+	(classes+=Class)*;
+
+Reference:
+	Generic | Class
+	//	| Pair
+;
+
+Class:
+	(abstract?='abstract')? 'class' name=ID ('extends' parents+=[Class|ID] (',' parents+=[Class|ID])*)? ('<'
+	generics+=Generic (','
+	generics+=Generic)*
+	'>')? '{' (fields+=Field)* '}';
+
+Generic:
+	name=ID;
+
+Field:
+	containment?='@'? name=ID ':' type=[Reference|ID] ('<' generics+=[Reference|ID] (',' generics+=[Reference|ID])* '>')?
+	'[' start_card=Card '..' stop_card=Card ']';
+
+Card:
+	{Card0} '0' |
+	{Card1} '1' |
+	{CardInf} '*';

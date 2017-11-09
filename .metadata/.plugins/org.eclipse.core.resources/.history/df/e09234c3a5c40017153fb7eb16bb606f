@@ -1,0 +1,92 @@
+grammar fr.mleduc.ExplicitOperations with org.eclipse.xtext.common.Terminals
+
+generate explicitOperations "http://www.mleduc.fr/ExplicitOperations"
+
+Model:
+	'package' name=ID
+	(languages+=Language | operations+=Operation | artifacts+=Artifact | compositions+=Composition |
+	featureModels+=FeatureModel)*;
+
+FeatureModel:
+	'FM' name=ID feature+=Feature;
+
+Feature:
+	AtomicFeature | OneOf | SomeOf;
+
+AtomicFeature returns Feature:
+	{AtomicFeture}
+	(optional?='?')? 'feature' name=ID '(' constraints=Proposition ')'?;
+
+OneOf returns Feature:
+	{OneOf}
+	(optional?='?')? name=ID 'oneOf' '[' children+=Feature ']' '(' constraints=Proposition ')'?;
+
+SomeOf returns Feature:
+	{SomeOf}
+	(optional?='?')? 'someOf' name=ID '[' children+=Feature ']' '(' constraints=Proposition ')'?;
+
+Proposition:
+	Equiv;
+
+Equiv returns Proposition:
+	Imply ({Equiv.left=current} '<=>' right=Imply)*;
+
+Imply returns Proposition:
+	Or ({Imply.left=current} '=>' right=Or)*;
+
+Or returns Proposition:
+	And ({Or.left=current} 'or' right=And)*;
+
+And returns Proposition:
+	Primary ({And.left=current} 'and' right=Primary)*;
+
+Primary returns Proposition:
+	'(' Proposition ')' |
+	{Not} '!' next=Primary |
+	{Variable} ref=[Feature|ID];
+
+	/**
+ * External to the language CS
+ */
+Operation:
+	'operation' name=ID
+	'inputs'
+	inputs+=OperationParameter*
+	'output'
+	output=OperationParameter;
+
+OperationParameter:
+	name=ID ':' type=[Language|ID] cardinality=Cardinality;
+
+Cardinality:
+	'[' start=CardVal '..' stop=CardVal ']';
+
+CardVal:
+	{CardVal0} '0' |
+	{CardVal1} '1' |
+	{CardValN} '*';
+
+Language:
+	'language' name=ID
+	dependencies+=LanguageDependency*;
+
+	/**
+ * Internal to the language CS
+ */
+LanguageDependency:
+	name=ID ':' type=[Language|ID];
+
+Artifact:
+	'artifact' name=ID ':' type=[Language|ID] ('[' parameters+=ArtifactParameter* ']')?;
+
+ArtifactParameter:
+	name=[LanguageDependency|ID] '=>' artifact=[Referentiable|ID];
+
+Referentiable:
+	Artifact | Composition;
+
+Composition:
+	'composition' name=ID '::' operation=[Operation|ID] '[' parameters+=CompositionParameter* ']';
+
+CompositionParameter:
+	name=[OperationParameter|ID] '=>' artifact=[Referentiable|ID];

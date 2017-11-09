@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?eclipse version="3.4"?><plugin>
+  <extension point="org.eclipse.emf.ecore.generated_package">
+    <!-- @generated VarLangMT -->
+    <package class="varlang.varlangmt.exprconcern.ExprconcernPackage" genModel="model-gen/VarLangMT.genmodel" uri="http://varlang.varlangmt/exprconcern/"/>
+  </extension>
+  
+<extension point="fr.inria.diverse.melange.modeltype">
+    <modeltype id="varlang.VarLangMT" uri="http://varlang.varlangmt/"/>
+  </extension>
+  <extension point="fr.inria.diverse.melange.language">
+    <language aspects="" entryPoints="" exactType="varlang.VarLangMT" id="varlang.VarLang" uri="http://varlang.varlang/exprconcern/">
+      <adapter class="varlang.varlang.adapters.varlangmt.VarLangAdapter" modeltypeId="varlang.VarLangMT"/>
+    </language>
+  </extension>
+</plugin>

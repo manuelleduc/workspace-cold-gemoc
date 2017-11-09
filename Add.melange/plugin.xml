@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?eclipse version="3.4"?><plugin>
+  <extension point="org.eclipse.emf.ecore.generated_package">
+    <!-- @generated AddLangMT -->
+    <package class="add.addlangmt.expr_cst_add.Expr_cst_addPackage" genModel="model-gen/AddLangMT.genmodel" uri="http://add.addlangmt/expr_cst_add/"/>
+  </extension>
+  <extension point="org.eclipse.emf.ecore.generated_package">
+    <!-- @generated AddLangEvalMT -->
+    <package class="add.addlangevalmt.expr_cst_add.Expr_cst_addPackage" genModel="model-gen/AddLangEvalMT.genmodel" uri="http://add.addlangevalmt/expr_cst_add/"/>
+  </extension>
+  
+<extension point="fr.inria.diverse.melange.modeltype">
+    <modeltype id="add.AddLangMT" uri="http://add.addlangmt/"/>
+  </extension>
+  <extension point="fr.inria.diverse.melange.language">
+    <language aspects="" entryPoints="" exactType="add.AddLangMT" id="add.AddLang" uri="http://add.addlang/expr_cst_add/">
+      <adapter class="add.addlang.adapters.addlangmt.AddLangAdapter" modeltypeId="add.AddLangMT"/>
+    </language>
+  </extension>
+</plugin>

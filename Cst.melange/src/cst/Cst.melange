@@ -1,0 +1,6 @@
+package cst
+
+language CstLang {
+	syntax "platform:/resource/Cst.as/model/cst.ecore" renaming {"cst" to "exprconcern"}
+	syntax "platform:/resource/Expr.as/model/expr.ecore" renaming { "expr" to "exprconcern" }
+}

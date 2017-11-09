@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/fr.inria.diverse.gfsm.model/src" modelPluginID="fr.inria.diverse.gfsm.model"
+    modelName="Gfsm" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="8.0" copyrightFields="false"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>gfsm.ecore</foreignModel>
+  <genPackages prefix="Gfsm" disposableProviderFactory="true" ecorePackage="gfsm.ecore#/">
+    <genClasses ecoreClass="gfsm.ecore#//Transition">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gfsm.ecore#//Transition/guard"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference gfsm.ecore#//Transition/fsm"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gfsm.ecore#//Transition/event"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference gfsm.ecore#//Transition/from"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference gfsm.ecore#//Transition/to"/>
+    </genClasses>
+    <genClasses ecoreClass="gfsm.ecore#//State">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gfsm.ecore#//State/inExpression"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gfsm.ecore#//State/outExpression"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gfsm.ecore#//State/name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference gfsm.ecore#//State/fsm"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference gfsm.ecore#//State/outgoingtransitions"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference gfsm.ecore#//State/incommingtransitions"/>
+    </genClasses>
+    <genClasses ecoreClass="gfsm.ecore#//FinalState"/>
+    <genClasses ecoreClass="gfsm.ecore#//InitialState"/>
+    <genClasses ecoreClass="gfsm.ecore#//FSM">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gfsm.ecore#//FSM/states"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gfsm.ecore#//FSM/transitions"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference gfsm.ecore#//FSM/initialstate"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gfsm.ecore#//FSM/name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference gfsm.ecore#//FSM/currentState"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="gfsm.ecore#//IntBinaryExpression">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gfsm.ecore#//IntBinaryExpression/expression1"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gfsm.ecore#//IntBinaryExpression/expression2"/>
+    </genClasses>
+    <genClasses ecoreClass="gfsm.ecore#//IntAdd"/>
+    <genClasses ecoreClass="gfsm.ecore#//IntMult"/>
+    <genClasses ecoreClass="gfsm.ecore#//IntNeg">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gfsm.ecore#//IntNeg/expression"/>
+    </genClasses>
+    <genClasses ecoreClass="gfsm.ecore#//IntVarRef">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gfsm.ecore#//IntVarRef/name"/>
+    </genClasses>
+    <genClasses ecoreClass="gfsm.ecore#//ConstExpr">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gfsm.ecore#//ConstExpr/value"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="gfsm.ecore#//BooleanExpression"/>
+    <genClasses image="false" ecoreClass="gfsm.ecore#//IntOperation"/>
+    <genClasses ecoreClass="gfsm.ecore#//IntVarAssign">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gfsm.ecore#//IntVarAssign/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gfsm.ecore#//IntVarAssign/expression"/>
+    </genClasses>
+    <genClasses ecoreClass="gfsm.ecore#//IntBlock">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gfsm.ecore#//IntBlock/operations"/>
+    </genClasses>
+    <genClasses ecoreClass="gfsm.ecore#//BooleanEqual"/>
+    <genClasses ecoreClass="gfsm.ecore#//BooleanOr"/>
+    <genClasses ecoreClass="gfsm.ecore#//BooleanAnd"/>
+    <genClasses ecoreClass="gfsm.ecore#//BooleanGreaterThan"/>
+    <genClasses image="false" ecoreClass="gfsm.ecore#//BooleanBinaryExpression">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gfsm.ecore#//BooleanBinaryExpression/boolExpression1"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gfsm.ecore#//BooleanBinaryExpression/boolExpression2"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="gfsm.ecore#//BooleanCompareExpression">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gfsm.ecore#//BooleanCompareExpression/expression1"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gfsm.ecore#//BooleanCompareExpression/expression2"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="gfsm.ecore#//IntExpression"/>
+  </genPackages>
+</genmodel:GenModel>

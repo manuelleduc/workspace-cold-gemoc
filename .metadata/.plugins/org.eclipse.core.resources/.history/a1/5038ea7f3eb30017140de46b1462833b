@@ -1,0 +1,10 @@
+package eval.expr_cst_mult_add.aspects
+
+import com.sun.org.apache.xpath.internal.operations.Mult
+import expr.Expr
+import fr.inria.diverse.k3.al.annotationprocessor.Aspect
+
+@Aspect(className=Expr)
+abstract class ExprAspect {
+	def long eval()
+}

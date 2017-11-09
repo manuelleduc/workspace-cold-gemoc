@@ -1,0 +1,31 @@
+package fr.mleduc.generator
+
+import fr.mleduc.explicitOperations.Model
+
+import org.jgrapht.*;
+import org.jgrapht.graph.*;
+
+class LanguageBuildPlanGenerator {
+	def buildPlan(Model model) {
+		val languages = model.languages
+
+		val Graph<String, DefaultEdge> stringGraph = null
+
+		val l = newArrayList()
+		val s = languages.filter[dependencies.empty].toList
+
+		while (!s.empty) {
+			val x = s.head
+			s.remove(x)
+			l.add(x)
+
+			x.dependencies.forEach [
+				x.dependencies.remove(it)
+				if (it.type.dependencies.empty)
+					s.add(it.type)
+			]
+		}
+
+		''''''
+	}
+}

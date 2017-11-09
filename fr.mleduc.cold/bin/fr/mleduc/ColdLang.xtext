@@ -1,0 +1,88 @@
+grammar fr.mleduc.ColdLang with org.eclipse.xtext.common.Terminals
+
+generate coldLang "http://www.mleduc.fr/ColdLang"
+
+Model:
+	(concerns+=Concern | languages+=Language | perspectives+=Perspective)*;
+
+Concern:
+	'concern' name=ID '{'
+	('import' imported+=[Perspective|ID])?
+	(facets+=Facet | artifact+=Artifact)*
+	fm=FeatureModel
+	'}';
+
+FeatureModel:
+	OneOf | SomeOf | Feature;
+
+OneOf returns FeatureModel:
+	{OneOf}
+	(optional?='?')? 'oneOf' name=ID '['
+	("-" children+=FeatureModel)*
+	']' condition=Condition?;
+
+SomeOf returns FeatureModel:
+	{SomeOf}
+	(optional?='?')? 'someOf' name=ID '['
+	("-" children+=FeatureModel)*
+	']' condition=Condition?;
+
+Feature returns FeatureModel:
+	{Feature}
+	(optional?='?')? 'feature' name=ID condition=Condition?;
+
+Language:
+	'language' name=ID '{'
+	(operators+=LanguageOperator)*
+	'}';
+
+LanguageOperator:
+	name=ID ':' type+=[Language|ID] ('=>' types+=[Language|ID])* '[' description=STRING ']';
+
+Perspective:
+	'perspective' name=ID '{'
+	(languages+=PerspectiveLanguage)*
+	'}';
+
+PerspectiveLanguage:
+	name=ID ':' language=[Language|ID] (operator=[LanguageOperator|ID] perspective=[PerspectiveLanguage|IDS])?;
+
+Facet:
+	'facet' name=ID ':' perspective=[Perspective|ID] '{'
+	'activation' activation=Condition
+	(compositions+=FacetComposition)*
+	'}';
+
+FacetComposition:
+	perspectiveLanguage=[PerspectiveLanguage|ID] ':' application=Application;
+
+Application returns Application:
+	{ArtifactRef} artifact=[Artifact|ID] |
+	{Application} languageOperator=[LanguageOperator|ID] '(' applications+=Application (',' applications+=Application)*
+	')';
+
+Artifact:
+	'artifact' name=ID ':' language=[Language|ID];
+
+Condition:
+	Equiv;
+
+Equiv returns Condition:
+	Imply ({Equiv.left=current} '<=>' right=Imply)*;
+
+Imply returns Condition:
+	Or ({Imply.left=current} '=>' right=Or)*;
+
+Or returns Condition:
+	And ({Or.left=current} 'or' right=And)*;
+
+And returns Condition:
+	Primary ({And.left=current} 'and' right=Primary)*;
+
+Primary returns Condition:
+	'(' Condition ')' |
+	{Not} '!' next=Primary |
+	{Variable} ref=[FeatureModel|ID];
+
+IDS:
+	ID ('.' ID)*;

@@ -1,0 +1,8 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Rev
+Bundle-SymbolicName: add.rev
+Bundle-Version: 1.0.0.qualifier
+Export-Package: add.rev
+Require-Bundle: add.addlang,
+ eval.operation;visibility:=reexport

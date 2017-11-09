@@ -1,0 +1,30 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: fr.mleduc.mlang
+Bundle-Vendor: My Company
+Bundle-Version: 1.0.0.qualifier
+Bundle-SymbolicName: fr.mleduc.mlang; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: org.eclipse.xtext,
+ org.eclipse.xtext.xbase,
+ org.eclipse.equinox.common;bundle-version="3.5.0",
+ fr.mleduc.mmlang;bundle-version="1.0.0";visibility:=reexport,
+ org.eclipse.emf.ecore,
+ org.eclipse.xtext.xbase.lib,
+ org.antlr.runtime,
+ org.eclipse.xtext.util,
+ org.eclipse.xtend.lib,
+ org.eclipse.emf.common
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Export-Package: fr.mleduc.mLang.impl,
+ fr.mleduc.mLang.util,
+ fr.mleduc,
+ fr.mleduc.services,
+ fr.mleduc.serializer,
+ fr.mleduc.parser.antlr.internal,
+ fr.mleduc.generator,
+ fr.mleduc.scoping,
+ fr.mleduc.mLang,
+ fr.mleduc.parser.antlr,
+ fr.mleduc.validation
+Import-Package: org.apache.log4j

@@ -1,0 +1,15 @@
+grammar fr.mleduc.MMCLang with org.eclipse.xtext.common.Terminals
+
+generate mMCLang "http://www.mleduc.fr/MMCLang"
+import "http://www.mleduc.fr/MMLang" as mmLang
+
+Composition:
+	'package' name=ID
+	(operations+=Operation)*;
+
+Operation:
+	{Merge} 'merge' metamodel=[mmLang::Metamodel|ID] ('renaming' pairs+=Pair)? |
+	{Slice} 'slice' metamodel=[mmLang::Metamodel|ID] 'on' (targets+=[mmLang::Class|ID])*;
+
+Pair:
+	from=[mmLang::Class|ID] '=>' name=ID;

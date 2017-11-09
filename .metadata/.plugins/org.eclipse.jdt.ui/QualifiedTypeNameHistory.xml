@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="cst.Expr"/>
+<fullyQualifiedTypeName name="cst.Cst"/>
+<fullyQualifiedTypeName name="cst.rev.CstRev"/>
+<fullyQualifiedTypeName name="cst.rev.CstEvalRev"/>
+<fullyQualifiedTypeName name="add.rev.AddRev"/>
+<fullyQualifiedTypeName name="eval.operation.EvalExpr"/>
+<fullyQualifiedTypeName name="eval.operation.EvalMult"/>
+<fullyQualifiedTypeName name="varadd.rev.VarAddRev"/>
+<fullyQualifiedTypeName name="varadd.varaddlang.exprconcern.Expr"/>
+<fullyQualifiedTypeName name="varadd.varaddlang.exprconcern.Variable"/>
+<fullyQualifiedTypeName name="eval.operation.EvalCExpr"/>
+<fullyQualifiedTypeName name="eval.operation.EvalCAdd"/>
+<fullyQualifiedTypeName name="eval.operation.EvalCVariable"/>
+</qualifiedTypeNameHistroy>

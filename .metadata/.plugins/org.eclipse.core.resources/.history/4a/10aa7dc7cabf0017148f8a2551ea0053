@@ -1,0 +1,19 @@
+grammar fr.mleduc.Csv with org.eclipse.xtext.common.Terminals
+
+generate csv "http://www.mleduc.fr/Csv"
+
+Model:
+	lines+=Line*;
+
+Line:
+	cells+=Cell (',' cells+=Cell)* NL;
+
+Cell:
+	{StringCell} content=STRING |
+	{FreeCell} content=FREE_CELL;
+
+terminal NL:
+	('\r' | '\n')+;
+
+terminal FREE_CELL:
+	!('\r' | '\n' | ',')*; 

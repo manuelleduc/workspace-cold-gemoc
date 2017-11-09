@@ -1,0 +1,26 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: varadd.cs
+Bundle-Vendor: My Company
+Bundle-Version: 1.0.0.qualifier
+Bundle-SymbolicName: varadd.cs; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: varadd.varaddlang,
+ org.eclipse.xtext,
+ org.eclipse.xtext.xbase,
+ org.eclipse.equinox.common;bundle-version="3.5.0",
+ org.eclipse.xtext.xbase.lib,
+ org.eclipse.xtext.util,
+ org.eclipse.xtend.lib,
+ org.antlr.runtime
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Export-Package: varadd.cs.generator,
+ varadd.cs.scoping,
+ varadd.cs.services,
+ varadd.cs,
+ varadd.cs.validation,
+ varadd.cs.formatting,
+ varadd.cs.serializer,
+ varadd.cs.parser.antlr.internal,
+ varadd.cs.parser.antlr
+Import-Package: org.apache.log4j

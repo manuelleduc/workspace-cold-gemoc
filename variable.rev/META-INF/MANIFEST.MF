@@ -1,0 +1,8 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Rev
+Bundle-SymbolicName: variable.rev
+Bundle-Version: 1.0.0.qualifier
+Export-Package: variable.rev
+Require-Bundle: varlang.varlang,
+ eval.operation;visibility:=reexport

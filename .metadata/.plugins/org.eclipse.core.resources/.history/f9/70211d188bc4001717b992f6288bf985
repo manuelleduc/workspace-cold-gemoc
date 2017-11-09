@@ -1,0 +1,19 @@
+package fr.mleduc.generator
+
+import fr.mleduc.explicitOperations.Model
+
+class LanguageBuildPlanGenerator {
+	def buildPlan(Model model) {
+		val languages = model.languages
+		
+		val l = newArrayList()
+		val s = languages.filter[dependencies.empty].toList
+		
+		while(!s.empty) {
+			val x = s.head
+			s.
+		}
+		
+		''''''
+	}
+}

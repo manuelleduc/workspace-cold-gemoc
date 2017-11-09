@@ -1,0 +1,5 @@
+package abc.model;
+
+@SuppressWarnings("all")
+public class C {
+}

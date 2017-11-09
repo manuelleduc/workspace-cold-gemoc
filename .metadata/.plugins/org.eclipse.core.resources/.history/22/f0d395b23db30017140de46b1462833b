@@ -1,0 +1,34 @@
+package eval.expr_cst_mult_add.aspects
+
+import fr.inria.diverse.k3.al.annotationprocessor.Aspect
+import multadd.multaddlang.expr_cst_mult_add.Add
+import multadd.multaddlang.expr_cst_mult_add.Cst
+import multadd.multaddlang.expr_cst_mult_add.Expr
+import multadd.multaddlang.expr_cst_mult_add.Mult
+
+@Aspect(className=Expr)
+abstract class ExprAspect {
+	
+}
+
+@Aspect(className=Add)
+class AddAspect extends ExprAspect {
+	def long eval() {
+		_self.left.eval() + _self.right.eval()
+	}
+}
+
+@Aspect(className=Mult)
+class MultAspect extends ExprAspect {
+	def long eval() {
+		_self.left.eval() + _self.right.eval()
+	}
+}
+
+@Aspect(className=Cst)
+class CstAspect extends ExprAspect {
+
+}
+
+
+

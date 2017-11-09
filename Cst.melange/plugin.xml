@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?eclipse version="3.4"?><plugin>
+  <extension point="org.eclipse.emf.ecore.generated_package">
+    <!-- @generated CstEvalLangMT -->
+    <package class="cst.cstevallang.expr_cst.cstevallang.cstevallangmt.expr_cst.Expr_cstPackage" genModel="model-gen/CstEvalLangMT.genmodel" uri="http://cst.cstevallang.expr_cst.cstevallang.cstevallangmt/expr_cst/"/>
+  </extension>
+  <extension point="org.eclipse.emf.ecore.generated_package">
+    <!-- @generated CstLangMT -->
+    <package class="cst.cstlangmt.exprconcern.ExprconcernPackage" genModel="model-gen/CstLangMT.genmodel" uri="http://cst.cstlangmt/exprconcern/"/>
+  </extension>
+  
+<extension point="fr.inria.diverse.melange.modeltype">
+    <modeltype id="cst.CstLangMT" uri="http://cst.cstlangmt/"/>
+  </extension>
+  <extension point="fr.inria.diverse.melange.language">
+    <language aspects="" entryPoints="" exactType="cst.CstLangMT" id="cst.CstLang" uri="http://cst.cstlang/exprconcern/">
+      <adapter class="cst.cstlang.adapters.cstlangmt.CstLangAdapter" modeltypeId="cst.CstLangMT"/>
+    </language>
+  </extension>
+</plugin>

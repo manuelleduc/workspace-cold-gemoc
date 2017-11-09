@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<plugin>
+
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated AddLang -->
+      <package
+            uri="http://add.addlang/expr_cst_add/"
+            class="add.addlang.expr_cst_add.Expr_cst_addPackage"
+            genModel="model/AddLang.genmodel"/>
+   </extension>
+
+</plugin>

@@ -1,0 +1,31 @@
+package abc.k3
+
+import static extension abc.k3.AAspect.*
+import static extension abc.k3.BAspect.*
+import static extension abc.k3.CAspect.*
+
+class Main {
+	def static void main(String[] args) {
+		val a = model.ModelFactory::eINSTANCE.createA() => [
+			val b1 = model.ModelFactory::eINSTANCE.createB() => [
+				val c1 = model.ModelFactory::eINSTANCE.createC()
+				val c2 = model.ModelFactory::eINSTANCE.createC()
+				cs.addAll(c1, c2)
+			]
+			val b2 = model.ModelFactory::eINSTANCE.createB() => [
+				val c1 = model.ModelFactory::eINSTANCE.createC()
+				val c2 = model.ModelFactory::eINSTANCE.createC()
+				cs.addAll(c1, c2)
+			]
+			bs.addAll(b1, b2)
+		]
+		
+		a.assign
+		
+		println('''
+		«FOR b: a.bs»
+		«b.assign»
+		«ENDFOR»
+		''')
+	}
+}

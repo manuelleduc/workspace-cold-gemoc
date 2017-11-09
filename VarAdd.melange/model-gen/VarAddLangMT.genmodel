@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="ASCII"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/VarAdd.melange/src-gen" modelPluginID="VarAdd.melange" modelName="VarAddLangMT" complianceLevel="7.0" copyrightFields="false">
+  <foreignModel>platform:/resource/VarAdd.melange/model-gen/VarAddLangMT.ecore</foreignModel>
+  <genPackages prefix="Exprconcern" basePackage="varadd.varaddlangmt" disposableProviderFactory="true">
+    <ecorePackage href="VarAddLangMT.ecore#/"/>
+    <genClasses image="false">
+      <ecoreClass href="VarAddLangMT.ecore#//Expr"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="VarAddLangMT.ecore#//Variable"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="VarAddLangMT.ecore#//Variable/name"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="VarAddLangMT.ecore#//Add"/>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="VarAddLangMT.ecore#//Add/left"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="VarAddLangMT.ecore#//Add/right"/>
+      </genFeatures>
+    </genClasses>
+  </genPackages>
+  <usedGenPackages href="../../org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore"/>
+</genmodel:GenModel>

@@ -1,0 +1,5 @@
+package varlang
+
+language VarLang {
+	syntax "platform:/resource/Var.as/model/variable.ecore" renaming {"variable" to "exprconcern"}
+}

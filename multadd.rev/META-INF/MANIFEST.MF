@@ -1,0 +1,8 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Rev
+Bundle-SymbolicName: multadd.rev
+Bundle-Version: 1.0.0.qualifier
+Export-Package: multadd.rev
+Require-Bundle: multadd.multaddlang;bundle-version="0.1.0",
+ eval.operation;visibility:=reexport

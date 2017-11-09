@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?eclipse version="3.4"?><plugin>
+  <extension point="org.eclipse.emf.ecore.generated_package">
+    <!-- @generated MultLangMT -->
+    <package class="mult.multlangmt.exprconcern.ExprconcernPackage" genModel="model-gen/MultLangMT.genmodel" uri="http://mult.multlangmt/exprconcern/"/>
+  </extension>
+  
+<extension point="fr.inria.diverse.melange.modeltype">
+    <modeltype id="mult.MultLangMT" uri="http://mult.multlangmt/"/>
+  </extension>
+  <extension point="fr.inria.diverse.melange.language">
+    <language aspects="" entryPoints="" exactType="mult.MultLangMT" id="mult.MultLang" uri="http://mult.multlang/exprconcern/">
+      <adapter class="mult.multlang.adapters.multlangmt.MultLangAdapter" modeltypeId="mult.MultLangMT"/>
+    </language>
+  </extension>
+</plugin>

@@ -1,0 +1,15 @@
+Manifest-Version: 1.0
+Bundle-SymbolicName: gfsm.model;singleton:=true
+Export-Package: gfsm.model.gfsm,gfsm.model.gfsm.impl,gfsm.model.gfsm.u
+ til
+Bundle-Name: %pluginName
+Bundle-Version: 0.1.0.201707281227
+Bundle-ClassPath: .
+Bundle-Localization: plugin
+Require-Bundle: org.eclipse.emf.ecore;visibility:=reexport,org.eclipse
+ .core.runtime
+Bundle-ManifestVersion: 2
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-ActivationPolicy: lazy
+Bundle-Vendor: %providerName
+

@@ -1,0 +1,29 @@
+package abc.k3
+
+import fr.inria.diverse.k3.al.annotationprocessor.Aspect
+import model.A
+import model.B
+import model.C
+
+import static abc.k3.AAspect
+
+@Aspect(className=A)
+class AAspect {
+	def void assign() {
+		var Long i = 0L
+		for (b : _self.bs) {
+//			b.cptr = i
+			i = i + 1
+		}
+	}
+}
+
+@Aspect(className=B)
+class BAspect {
+	val Long cptr = 0L
+
+}
+
+@Aspect(className=C)
+class CAspect {
+}

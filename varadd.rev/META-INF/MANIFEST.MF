@@ -1,0 +1,8 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Rev
+Bundle-SymbolicName: varadd.rev
+Bundle-Version: 1.0.0.qualifier
+Require-Bundle: varadd.varaddlang,
+ eval.operation;bundle-version="1.0.0";visibility:=reexport
+Export-Package: varadd.rev

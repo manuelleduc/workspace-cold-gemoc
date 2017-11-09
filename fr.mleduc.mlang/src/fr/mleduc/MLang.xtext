@@ -1,0 +1,25 @@
+grammar fr.mleduc.MLang with org.eclipse.xtext.common.Terminals
+
+generate mLang "http://www.mleduc.fr/MLang"
+import "http://www.mleduc.fr/MMLang" as mmLang
+
+Model:
+	'model' name=ID 'metamodel' metamodel=[mmLang::Metamodel|ID]
+	(instances+=Instance)*;
+
+Instance:
+	'instance' name=ID ':' type=[mmLang::Class|ID] '{'
+	(fields+=Field)*
+	'}';
+
+Field:
+	key=[mmLang::Field|ID] '=' value=Value // TODO add static validation of value representation according to their type;
+;
+
+Value:
+	{FreeVal} val=ANY_OTHER |
+	{StringVal} val=STRING |
+	{IntVal} val=INT |
+	{InstanceVal} ref=[Instance|ID] |
+	{ListVal} '[' (vals+=Value)* ']' |
+	{SetVal} '{' (vals+=Value)* '}';

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/Add.as/src" modelPluginID="Add.as" modelName="Add"
+    rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" importerID="org.eclipse.emf.importer.ecore"
+    complianceLevel="8.0" copyrightFields="false" operationReflection="true" importOrganizing="true">
+  <foreignModel>add.ecore</foreignModel>
+  <genPackages prefix="Add" disposableProviderFactory="true" ecorePackage="add.ecore#/">
+    <genClasses image="false" ecoreClass="add.ecore#//Expr"/>
+    <genClasses ecoreClass="add.ecore#//Add">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference add.ecore#//Add/left"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference add.ecore#//Add/right"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

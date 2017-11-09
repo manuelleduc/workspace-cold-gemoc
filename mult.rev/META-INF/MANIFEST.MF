@@ -1,0 +1,8 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Rev
+Bundle-SymbolicName: mult.rev
+Bundle-Version: 1.0.0.qualifier
+Export-Package: mult.rev
+Require-Bundle: mult.multlang;bundle-version="0.1.0",
+ eval.operation;visibility:=reexport
