@@ -1,0 +1,10 @@
+
+\.metadata/
+
+fr\.mleduc\.ExplicitOperation/target/
+
+fr\.mleduc\.ExplicitOperation\.ide/bin/
+
+fr\.mleduc\.ExplicitOperation\.tests/bin/
+
+fr\.mleduc\.ExplicitOperation\.ui/bin/

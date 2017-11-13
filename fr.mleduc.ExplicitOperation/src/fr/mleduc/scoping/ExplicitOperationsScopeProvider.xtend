@@ -26,7 +26,6 @@ import fr.mleduc.explicitOperations.Feature
 class ExplicitOperationsScopeProvider extends AbstractExplicitOperationsScopeProvider {
 
 	override IScope getScope(EObject context, EReference reference) {
-		println(reference)
 		return if (reference == ExplicitOperationsPackage.Literals.COMPOSITION_PARAMETER__NAME) {
 			val cp = context as CompositionParameter
 			val composition = cp.eContainer as Composition
@@ -38,6 +37,10 @@ class ExplicitOperationsScopeProvider extends AbstractExplicitOperationsScopePro
 			val map = artifact.type.dependencies.map[EObjectDescription::create(it.name, it)]
 			MapBasedScope::createScope(IScope::NULLSCOPE, map)
 		} else if (reference == ExplicitOperationsPackage.Literals.VARIABLE__REF) {
+			val root = EcoreUtil2.getRootContainer(context) as Model
+			val map = root.eAllContents.filter(Feature).map[EObjectDescription::create(it.name, it)].toList
+			MapBasedScope::createScope(IScope::NULLSCOPE, map)
+		} else if (reference == ExplicitOperationsPackage.Literals.ACTIVATION__CONSTRAINTS) {
 			val root = EcoreUtil2.getRootContainer(context) as Model
 			val map = root.eAllContents.filter(Feature).map[EObjectDescription::create(it.name, it)].toList
 			MapBasedScope::createScope(IScope::NULLSCOPE, map)

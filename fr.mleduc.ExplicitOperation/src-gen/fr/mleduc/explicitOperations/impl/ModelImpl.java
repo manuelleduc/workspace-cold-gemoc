@@ -3,6 +3,7 @@
  */
 package fr.mleduc.explicitOperations.impl;
 
+import fr.mleduc.explicitOperations.Activation;
 import fr.mleduc.explicitOperations.Artifact;
 import fr.mleduc.explicitOperations.Composition;
 import fr.mleduc.explicitOperations.ExplicitOperationsPackage;
@@ -41,6 +42,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link fr.mleduc.explicitOperations.impl.ModelImpl#getArtifacts <em>Artifacts</em>}</li>
  *   <li>{@link fr.mleduc.explicitOperations.impl.ModelImpl#getCompositions <em>Compositions</em>}</li>
  *   <li>{@link fr.mleduc.explicitOperations.impl.ModelImpl#getFeatureModels <em>Feature Models</em>}</li>
+ *   <li>{@link fr.mleduc.explicitOperations.impl.ModelImpl#getActivations <em>Activations</em>}</li>
  * </ul>
  *
  * @generated
@@ -116,6 +118,16 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
    * @ordered
    */
   protected EList<FeatureModel> featureModels;
+
+  /**
+   * The cached value of the '{@link #getActivations() <em>Activations</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getActivations()
+   * @generated
+   * @ordered
+   */
+  protected EList<Activation> activations;
 
   /**
    * <!-- begin-user-doc -->
@@ -236,6 +248,20 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
    * <!-- end-user-doc -->
    * @generated
    */
+  public EList<Activation> getActivations()
+  {
+    if (activations == null)
+    {
+      activations = new EObjectContainmentEList<Activation>(Activation.class, this, ExplicitOperationsPackage.MODEL__ACTIVATIONS);
+    }
+    return activations;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
@@ -251,6 +277,8 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
         return ((InternalEList<?>)getCompositions()).basicRemove(otherEnd, msgs);
       case ExplicitOperationsPackage.MODEL__FEATURE_MODELS:
         return ((InternalEList<?>)getFeatureModels()).basicRemove(otherEnd, msgs);
+      case ExplicitOperationsPackage.MODEL__ACTIVATIONS:
+        return ((InternalEList<?>)getActivations()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -277,6 +305,8 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
         return getCompositions();
       case ExplicitOperationsPackage.MODEL__FEATURE_MODELS:
         return getFeatureModels();
+      case ExplicitOperationsPackage.MODEL__ACTIVATIONS:
+        return getActivations();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -315,6 +345,10 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
         getFeatureModels().clear();
         getFeatureModels().addAll((Collection<? extends FeatureModel>)newValue);
         return;
+      case ExplicitOperationsPackage.MODEL__ACTIVATIONS:
+        getActivations().clear();
+        getActivations().addAll((Collection<? extends Activation>)newValue);
+        return;
     }
     super.eSet(featureID, newValue);
   }
@@ -347,6 +381,9 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
       case ExplicitOperationsPackage.MODEL__FEATURE_MODELS:
         getFeatureModels().clear();
         return;
+      case ExplicitOperationsPackage.MODEL__ACTIVATIONS:
+        getActivations().clear();
+        return;
     }
     super.eUnset(featureID);
   }
@@ -373,6 +410,8 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
         return compositions != null && !compositions.isEmpty();
       case ExplicitOperationsPackage.MODEL__FEATURE_MODELS:
         return featureModels != null && !featureModels.isEmpty();
+      case ExplicitOperationsPackage.MODEL__ACTIVATIONS:
+        return activations != null && !activations.isEmpty();
     }
     return super.eIsSet(featureID);
   }

@@ -1,7 +1,0 @@
-package abc.k3
-
-class Main {
-	def static void main(String[] args) {
-		val a =  model.ModelFactory::eINSTANCE.createA()
-	}
-}

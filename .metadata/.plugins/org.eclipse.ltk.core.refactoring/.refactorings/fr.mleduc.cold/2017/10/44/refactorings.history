@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Copy element &apos;PLRevisitor.xtend&apos; to &apos;PLRevisitor.xtend&apos;&#x0A;- Original project: &apos;fr.mleduc.cold&apos;&#x0A;- Destination element: &apos;PLRevisitor.xtend&apos;&#x0A;- Original element: &apos;PLRevisitor.xtend&apos;" description="Copy file" element1="src/fr/mleduc/lib/pl/revisitor/PLRevisitor.xtend" files="1" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1509466537699" target="/fr.mleduc.cold/src/fr/mleduc/lib/pl/revisitor/PLRevisitor.xtend" units="0" version="1.0"/>
-</session>

@@ -15,7 +15,6 @@ import org.eclipse.emf.common.util.EList;
  * </p>
  * <ul>
  *   <li>{@link fr.mleduc.explicitOperations.Composition#getOperation <em>Operation</em>}</li>
- *   <li>{@link fr.mleduc.explicitOperations.Composition#getActivation <em>Activation</em>}</li>
  *   <li>{@link fr.mleduc.explicitOperations.Composition#getParameters <em>Parameters</em>}</li>
  * </ul>
  *
@@ -50,32 +49,6 @@ public interface Composition extends Referentiable
    * @generated
    */
   void setOperation(Operation value);
-
-  /**
-   * Returns the value of the '<em><b>Activation</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Activation</em>' containment reference isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Activation</em>' containment reference.
-   * @see #setActivation(Proposition)
-   * @see fr.mleduc.explicitOperations.ExplicitOperationsPackage#getComposition_Activation()
-   * @model containment="true"
-   * @generated
-   */
-  Proposition getActivation();
-
-  /**
-   * Sets the value of the '{@link fr.mleduc.explicitOperations.Composition#getActivation <em>Activation</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Activation</em>' containment reference.
-   * @see #getActivation()
-   * @generated
-   */
-  void setActivation(Proposition value);
 
   /**
    * Returns the value of the '<em><b>Parameters</b></em>' containment reference list.

@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Move element &apos;EvalAdd.groovy&apos; to &apos;eval.operation/src/eval.operation&apos;&#x0A;- Original project: &apos;cst.rev&apos;&#x0A;- Destination element: &apos;eval.operation/src/eval.operation&apos;&#x0A;- Original element: &apos;cst.rev.EvalAdd.groovy&apos;&#x0A;- Update references to refactored element" description="Move compilation unit" destination="=eval.operation/src&lt;eval.operation" element1="/src&lt;cst.rev{EvalAdd.groovy" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.move" patterns="*" policy="org.eclipse.jdt.ui.moveResources" qualified="false" references="true" stamp="1508255477628" units="1" version="1.0"/>
-</session>

@@ -7,7 +7,6 @@ import fr.mleduc.explicitOperations.Composition;
 import fr.mleduc.explicitOperations.CompositionParameter;
 import fr.mleduc.explicitOperations.ExplicitOperationsPackage;
 import fr.mleduc.explicitOperations.Operation;
-import fr.mleduc.explicitOperations.Proposition;
 
 import java.util.Collection;
 
@@ -33,7 +32,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * </p>
  * <ul>
  *   <li>{@link fr.mleduc.explicitOperations.impl.CompositionImpl#getOperation <em>Operation</em>}</li>
- *   <li>{@link fr.mleduc.explicitOperations.impl.CompositionImpl#getActivation <em>Activation</em>}</li>
  *   <li>{@link fr.mleduc.explicitOperations.impl.CompositionImpl#getParameters <em>Parameters</em>}</li>
  * </ul>
  *
@@ -50,16 +48,6 @@ public class CompositionImpl extends ReferentiableImpl implements Composition
    * @ordered
    */
   protected Operation operation;
-
-  /**
-   * The cached value of the '{@link #getActivation() <em>Activation</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getActivation()
-   * @generated
-   * @ordered
-   */
-  protected Proposition activation;
 
   /**
    * The cached value of the '{@link #getParameters() <em>Parameters</em>}' containment reference list.
@@ -140,54 +128,6 @@ public class CompositionImpl extends ReferentiableImpl implements Composition
    * <!-- end-user-doc -->
    * @generated
    */
-  public Proposition getActivation()
-  {
-    return activation;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetActivation(Proposition newActivation, NotificationChain msgs)
-  {
-    Proposition oldActivation = activation;
-    activation = newActivation;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ExplicitOperationsPackage.COMPOSITION__ACTIVATION, oldActivation, newActivation);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setActivation(Proposition newActivation)
-  {
-    if (newActivation != activation)
-    {
-      NotificationChain msgs = null;
-      if (activation != null)
-        msgs = ((InternalEObject)activation).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ExplicitOperationsPackage.COMPOSITION__ACTIVATION, null, msgs);
-      if (newActivation != null)
-        msgs = ((InternalEObject)newActivation).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ExplicitOperationsPackage.COMPOSITION__ACTIVATION, null, msgs);
-      msgs = basicSetActivation(newActivation, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ExplicitOperationsPackage.COMPOSITION__ACTIVATION, newActivation, newActivation));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EList<CompositionParameter> getParameters()
   {
     if (parameters == null)
@@ -207,8 +147,6 @@ public class CompositionImpl extends ReferentiableImpl implements Composition
   {
     switch (featureID)
     {
-      case ExplicitOperationsPackage.COMPOSITION__ACTIVATION:
-        return basicSetActivation(null, msgs);
       case ExplicitOperationsPackage.COMPOSITION__PARAMETERS:
         return ((InternalEList<?>)getParameters()).basicRemove(otherEnd, msgs);
     }
@@ -228,8 +166,6 @@ public class CompositionImpl extends ReferentiableImpl implements Composition
       case ExplicitOperationsPackage.COMPOSITION__OPERATION:
         if (resolve) return getOperation();
         return basicGetOperation();
-      case ExplicitOperationsPackage.COMPOSITION__ACTIVATION:
-        return getActivation();
       case ExplicitOperationsPackage.COMPOSITION__PARAMETERS:
         return getParameters();
     }
@@ -249,9 +185,6 @@ public class CompositionImpl extends ReferentiableImpl implements Composition
     {
       case ExplicitOperationsPackage.COMPOSITION__OPERATION:
         setOperation((Operation)newValue);
-        return;
-      case ExplicitOperationsPackage.COMPOSITION__ACTIVATION:
-        setActivation((Proposition)newValue);
         return;
       case ExplicitOperationsPackage.COMPOSITION__PARAMETERS:
         getParameters().clear();
@@ -274,9 +207,6 @@ public class CompositionImpl extends ReferentiableImpl implements Composition
       case ExplicitOperationsPackage.COMPOSITION__OPERATION:
         setOperation((Operation)null);
         return;
-      case ExplicitOperationsPackage.COMPOSITION__ACTIVATION:
-        setActivation((Proposition)null);
-        return;
       case ExplicitOperationsPackage.COMPOSITION__PARAMETERS:
         getParameters().clear();
         return;
@@ -296,8 +226,6 @@ public class CompositionImpl extends ReferentiableImpl implements Composition
     {
       case ExplicitOperationsPackage.COMPOSITION__OPERATION:
         return operation != null;
-      case ExplicitOperationsPackage.COMPOSITION__ACTIVATION:
-        return activation != null;
       case ExplicitOperationsPackage.COMPOSITION__PARAMETERS:
         return parameters != null && !parameters.isEmpty();
     }

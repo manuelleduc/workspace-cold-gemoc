@@ -122,13 +122,59 @@ public interface ExplicitOperationsPackage extends EPackage
   int MODEL__FEATURE_MODELS = 5;
 
   /**
+   * The feature id for the '<em><b>Activations</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MODEL__ACTIVATIONS = 6;
+
+  /**
    * The number of structural features of the '<em>Model</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int MODEL_FEATURE_COUNT = 6;
+  int MODEL_FEATURE_COUNT = 7;
+
+  /**
+   * The meta object id for the '{@link fr.mleduc.explicitOperations.impl.ActivationImpl <em>Activation</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see fr.mleduc.explicitOperations.impl.ActivationImpl
+   * @see fr.mleduc.explicitOperations.impl.ExplicitOperationsPackageImpl#getActivation()
+   * @generated
+   */
+  int ACTIVATION = 1;
+
+  /**
+   * The feature id for the '<em><b>References</b></em>' reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ACTIVATION__REFERENCES = 0;
+
+  /**
+   * The feature id for the '<em><b>Constraints</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ACTIVATION__CONSTRAINTS = 1;
+
+  /**
+   * The number of structural features of the '<em>Activation</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ACTIVATION_FEATURE_COUNT = 2;
 
   /**
    * The meta object id for the '{@link fr.mleduc.explicitOperations.impl.FeatureModelImpl <em>Feature Model</em>}' class.
@@ -138,7 +184,7 @@ public interface ExplicitOperationsPackage extends EPackage
    * @see fr.mleduc.explicitOperations.impl.ExplicitOperationsPackageImpl#getFeatureModel()
    * @generated
    */
-  int FEATURE_MODEL = 1;
+  int FEATURE_MODEL = 2;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -175,7 +221,7 @@ public interface ExplicitOperationsPackage extends EPackage
    * @see fr.mleduc.explicitOperations.impl.ExplicitOperationsPackageImpl#getFeature()
    * @generated
    */
-  int FEATURE = 2;
+  int FEATURE = 3;
 
   /**
    * The feature id for the '<em><b>Optional</b></em>' attribute.
@@ -221,7 +267,7 @@ public interface ExplicitOperationsPackage extends EPackage
    * @see fr.mleduc.explicitOperations.impl.ExplicitOperationsPackageImpl#getProposition()
    * @generated
    */
-  int PROPOSITION = 3;
+  int PROPOSITION = 4;
 
   /**
    * The number of structural features of the '<em>Proposition</em>' class.
@@ -240,7 +286,7 @@ public interface ExplicitOperationsPackage extends EPackage
    * @see fr.mleduc.explicitOperations.impl.ExplicitOperationsPackageImpl#getOperation()
    * @generated
    */
-  int OPERATION = 4;
+  int OPERATION = 5;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -286,7 +332,7 @@ public interface ExplicitOperationsPackage extends EPackage
    * @see fr.mleduc.explicitOperations.impl.ExplicitOperationsPackageImpl#getOperationParameter()
    * @generated
    */
-  int OPERATION_PARAMETER = 5;
+  int OPERATION_PARAMETER = 6;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -332,7 +378,7 @@ public interface ExplicitOperationsPackage extends EPackage
    * @see fr.mleduc.explicitOperations.impl.ExplicitOperationsPackageImpl#getCardinality()
    * @generated
    */
-  int CARDINALITY = 6;
+  int CARDINALITY = 7;
 
   /**
    * The feature id for the '<em><b>Start</b></em>' containment reference.
@@ -369,7 +415,7 @@ public interface ExplicitOperationsPackage extends EPackage
    * @see fr.mleduc.explicitOperations.impl.ExplicitOperationsPackageImpl#getCardVal()
    * @generated
    */
-  int CARD_VAL = 7;
+  int CARD_VAL = 8;
 
   /**
    * The number of structural features of the '<em>Card Val</em>' class.
@@ -388,7 +434,7 @@ public interface ExplicitOperationsPackage extends EPackage
    * @see fr.mleduc.explicitOperations.impl.ExplicitOperationsPackageImpl#getLanguage()
    * @generated
    */
-  int LANGUAGE = 8;
+  int LANGUAGE = 9;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -425,7 +471,7 @@ public interface ExplicitOperationsPackage extends EPackage
    * @see fr.mleduc.explicitOperations.impl.ExplicitOperationsPackageImpl#getLanguageDependency()
    * @generated
    */
-  int LANGUAGE_DEPENDENCY = 9;
+  int LANGUAGE_DEPENDENCY = 10;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -462,7 +508,7 @@ public interface ExplicitOperationsPackage extends EPackage
    * @see fr.mleduc.explicitOperations.impl.ExplicitOperationsPackageImpl#getReferentiable()
    * @generated
    */
-  int REFERENTIABLE = 12;
+  int REFERENTIABLE = 13;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -490,7 +536,7 @@ public interface ExplicitOperationsPackage extends EPackage
    * @see fr.mleduc.explicitOperations.impl.ExplicitOperationsPackageImpl#getArtifact()
    * @generated
    */
-  int ARTIFACT = 10;
+  int ARTIFACT = 11;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -536,7 +582,7 @@ public interface ExplicitOperationsPackage extends EPackage
    * @see fr.mleduc.explicitOperations.impl.ExplicitOperationsPackageImpl#getArtifactParameter()
    * @generated
    */
-  int ARTIFACT_PARAMETER = 11;
+  int ARTIFACT_PARAMETER = 12;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' reference.
@@ -573,7 +619,7 @@ public interface ExplicitOperationsPackage extends EPackage
    * @see fr.mleduc.explicitOperations.impl.ExplicitOperationsPackageImpl#getComposition()
    * @generated
    */
-  int COMPOSITION = 13;
+  int COMPOSITION = 14;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -594,22 +640,13 @@ public interface ExplicitOperationsPackage extends EPackage
   int COMPOSITION__OPERATION = REFERENTIABLE_FEATURE_COUNT + 0;
 
   /**
-   * The feature id for the '<em><b>Activation</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int COMPOSITION__ACTIVATION = REFERENTIABLE_FEATURE_COUNT + 1;
-
-  /**
    * The feature id for the '<em><b>Parameters</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int COMPOSITION__PARAMETERS = REFERENTIABLE_FEATURE_COUNT + 2;
+  int COMPOSITION__PARAMETERS = REFERENTIABLE_FEATURE_COUNT + 1;
 
   /**
    * The number of structural features of the '<em>Composition</em>' class.
@@ -618,7 +655,7 @@ public interface ExplicitOperationsPackage extends EPackage
    * @generated
    * @ordered
    */
-  int COMPOSITION_FEATURE_COUNT = REFERENTIABLE_FEATURE_COUNT + 3;
+  int COMPOSITION_FEATURE_COUNT = REFERENTIABLE_FEATURE_COUNT + 2;
 
   /**
    * The meta object id for the '{@link fr.mleduc.explicitOperations.impl.CompositionParameterImpl <em>Composition Parameter</em>}' class.
@@ -628,7 +665,7 @@ public interface ExplicitOperationsPackage extends EPackage
    * @see fr.mleduc.explicitOperations.impl.ExplicitOperationsPackageImpl#getCompositionParameter()
    * @generated
    */
-  int COMPOSITION_PARAMETER = 14;
+  int COMPOSITION_PARAMETER = 15;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' reference.
@@ -665,7 +702,7 @@ public interface ExplicitOperationsPackage extends EPackage
    * @see fr.mleduc.explicitOperations.impl.ExplicitOperationsPackageImpl#getAtomicFeature()
    * @generated
    */
-  int ATOMIC_FEATURE = 15;
+  int ATOMIC_FEATURE = 16;
 
   /**
    * The feature id for the '<em><b>Optional</b></em>' attribute.
@@ -711,7 +748,7 @@ public interface ExplicitOperationsPackage extends EPackage
    * @see fr.mleduc.explicitOperations.impl.ExplicitOperationsPackageImpl#getOneOf()
    * @generated
    */
-  int ONE_OF = 16;
+  int ONE_OF = 17;
 
   /**
    * The feature id for the '<em><b>Optional</b></em>' attribute.
@@ -766,7 +803,7 @@ public interface ExplicitOperationsPackage extends EPackage
    * @see fr.mleduc.explicitOperations.impl.ExplicitOperationsPackageImpl#getSomeOf()
    * @generated
    */
-  int SOME_OF = 17;
+  int SOME_OF = 18;
 
   /**
    * The feature id for the '<em><b>Optional</b></em>' attribute.
@@ -821,7 +858,7 @@ public interface ExplicitOperationsPackage extends EPackage
    * @see fr.mleduc.explicitOperations.impl.ExplicitOperationsPackageImpl#getEquiv()
    * @generated
    */
-  int EQUIV = 18;
+  int EQUIV = 19;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -858,7 +895,7 @@ public interface ExplicitOperationsPackage extends EPackage
    * @see fr.mleduc.explicitOperations.impl.ExplicitOperationsPackageImpl#getImply()
    * @generated
    */
-  int IMPLY = 19;
+  int IMPLY = 20;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -895,7 +932,7 @@ public interface ExplicitOperationsPackage extends EPackage
    * @see fr.mleduc.explicitOperations.impl.ExplicitOperationsPackageImpl#getOr()
    * @generated
    */
-  int OR = 20;
+  int OR = 21;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -932,7 +969,7 @@ public interface ExplicitOperationsPackage extends EPackage
    * @see fr.mleduc.explicitOperations.impl.ExplicitOperationsPackageImpl#getAnd()
    * @generated
    */
-  int AND = 21;
+  int AND = 22;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -969,7 +1006,7 @@ public interface ExplicitOperationsPackage extends EPackage
    * @see fr.mleduc.explicitOperations.impl.ExplicitOperationsPackageImpl#getNot()
    * @generated
    */
-  int NOT = 22;
+  int NOT = 23;
 
   /**
    * The feature id for the '<em><b>Next</b></em>' containment reference.
@@ -997,7 +1034,7 @@ public interface ExplicitOperationsPackage extends EPackage
    * @see fr.mleduc.explicitOperations.impl.ExplicitOperationsPackageImpl#getVariable()
    * @generated
    */
-  int VARIABLE = 23;
+  int VARIABLE = 24;
 
   /**
    * The feature id for the '<em><b>Ref</b></em>' reference.
@@ -1025,7 +1062,7 @@ public interface ExplicitOperationsPackage extends EPackage
    * @see fr.mleduc.explicitOperations.impl.ExplicitOperationsPackageImpl#getCardVal0()
    * @generated
    */
-  int CARD_VAL0 = 24;
+  int CARD_VAL0 = 25;
 
   /**
    * The number of structural features of the '<em>Card Val0</em>' class.
@@ -1044,7 +1081,7 @@ public interface ExplicitOperationsPackage extends EPackage
    * @see fr.mleduc.explicitOperations.impl.ExplicitOperationsPackageImpl#getCardVal1()
    * @generated
    */
-  int CARD_VAL1 = 25;
+  int CARD_VAL1 = 26;
 
   /**
    * The number of structural features of the '<em>Card Val1</em>' class.
@@ -1063,7 +1100,7 @@ public interface ExplicitOperationsPackage extends EPackage
    * @see fr.mleduc.explicitOperations.impl.ExplicitOperationsPackageImpl#getCardValN()
    * @generated
    */
-  int CARD_VAL_N = 26;
+  int CARD_VAL_N = 27;
 
   /**
    * The number of structural features of the '<em>Card Val N</em>' class.
@@ -1150,6 +1187,49 @@ public interface ExplicitOperationsPackage extends EPackage
    * @generated
    */
   EReference getModel_FeatureModels();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link fr.mleduc.explicitOperations.Model#getActivations <em>Activations</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Activations</em>'.
+   * @see fr.mleduc.explicitOperations.Model#getActivations()
+   * @see #getModel()
+   * @generated
+   */
+  EReference getModel_Activations();
+
+  /**
+   * Returns the meta object for class '{@link fr.mleduc.explicitOperations.Activation <em>Activation</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Activation</em>'.
+   * @see fr.mleduc.explicitOperations.Activation
+   * @generated
+   */
+  EClass getActivation();
+
+  /**
+   * Returns the meta object for the reference list '{@link fr.mleduc.explicitOperations.Activation#getReferences <em>References</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference list '<em>References</em>'.
+   * @see fr.mleduc.explicitOperations.Activation#getReferences()
+   * @see #getActivation()
+   * @generated
+   */
+  EReference getActivation_References();
+
+  /**
+   * Returns the meta object for the containment reference '{@link fr.mleduc.explicitOperations.Activation#getConstraints <em>Constraints</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Constraints</em>'.
+   * @see fr.mleduc.explicitOperations.Activation#getConstraints()
+   * @see #getActivation()
+   * @generated
+   */
+  EReference getActivation_Constraints();
 
   /**
    * Returns the meta object for class '{@link fr.mleduc.explicitOperations.FeatureModel <em>Feature Model</em>}'.
@@ -1535,17 +1615,6 @@ public interface ExplicitOperationsPackage extends EPackage
   EReference getComposition_Operation();
 
   /**
-   * Returns the meta object for the containment reference '{@link fr.mleduc.explicitOperations.Composition#getActivation <em>Activation</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Activation</em>'.
-   * @see fr.mleduc.explicitOperations.Composition#getActivation()
-   * @see #getComposition()
-   * @generated
-   */
-  EReference getComposition_Activation();
-
-  /**
    * Returns the meta object for the containment reference list '{@link fr.mleduc.explicitOperations.Composition#getParameters <em>Parameters</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1922,6 +1991,40 @@ public interface ExplicitOperationsPackage extends EPackage
     EReference MODEL__FEATURE_MODELS = eINSTANCE.getModel_FeatureModels();
 
     /**
+     * The meta object literal for the '<em><b>Activations</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference MODEL__ACTIVATIONS = eINSTANCE.getModel_Activations();
+
+    /**
+     * The meta object literal for the '{@link fr.mleduc.explicitOperations.impl.ActivationImpl <em>Activation</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see fr.mleduc.explicitOperations.impl.ActivationImpl
+     * @see fr.mleduc.explicitOperations.impl.ExplicitOperationsPackageImpl#getActivation()
+     * @generated
+     */
+    EClass ACTIVATION = eINSTANCE.getActivation();
+
+    /**
+     * The meta object literal for the '<em><b>References</b></em>' reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ACTIVATION__REFERENCES = eINSTANCE.getActivation_References();
+
+    /**
+     * The meta object literal for the '<em><b>Constraints</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ACTIVATION__CONSTRAINTS = eINSTANCE.getActivation_Constraints();
+
+    /**
      * The meta object literal for the '{@link fr.mleduc.explicitOperations.impl.FeatureModelImpl <em>Feature Model</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -2234,14 +2337,6 @@ public interface ExplicitOperationsPackage extends EPackage
      * @generated
      */
     EReference COMPOSITION__OPERATION = eINSTANCE.getComposition_Operation();
-
-    /**
-     * The meta object literal for the '<em><b>Activation</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference COMPOSITION__ACTIVATION = eINSTANCE.getComposition_Activation();
 
     /**
      * The meta object literal for the '<em><b>Parameters</b></em>' containment reference list feature.

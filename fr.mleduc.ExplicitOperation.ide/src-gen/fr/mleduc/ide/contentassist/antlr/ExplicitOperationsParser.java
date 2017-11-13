@@ -41,6 +41,7 @@ public class ExplicitOperationsParser extends AbstractContentAssistParser {
 					put(grammarAccess.getCardValAccess().getAlternatives(), "rule__CardVal__Alternatives");
 					put(grammarAccess.getReferentiableAccess().getAlternatives(), "rule__Referentiable__Alternatives");
 					put(grammarAccess.getModelAccess().getGroup(), "rule__Model__Group__0");
+					put(grammarAccess.getActivationAccess().getGroup(), "rule__Activation__Group__0");
 					put(grammarAccess.getFeatureModelAccess().getGroup(), "rule__FeatureModel__Group__0");
 					put(grammarAccess.getAtomicFeatureAccess().getGroup(), "rule__AtomicFeature__Group__0");
 					put(grammarAccess.getAtomicFeatureAccess().getGroup_4(), "rule__AtomicFeature__Group_4__0");
@@ -78,6 +79,9 @@ public class ExplicitOperationsParser extends AbstractContentAssistParser {
 					put(grammarAccess.getModelAccess().getArtifactsAssignment_2_2(), "rule__Model__ArtifactsAssignment_2_2");
 					put(grammarAccess.getModelAccess().getCompositionsAssignment_2_3(), "rule__Model__CompositionsAssignment_2_3");
 					put(grammarAccess.getModelAccess().getFeatureModelsAssignment_2_4(), "rule__Model__FeatureModelsAssignment_2_4");
+					put(grammarAccess.getModelAccess().getActivationsAssignment_2_5(), "rule__Model__ActivationsAssignment_2_5");
+					put(grammarAccess.getActivationAccess().getReferencesAssignment_1(), "rule__Activation__ReferencesAssignment_1");
+					put(grammarAccess.getActivationAccess().getConstraintsAssignment_3(), "rule__Activation__ConstraintsAssignment_3");
 					put(grammarAccess.getFeatureModelAccess().getNameAssignment_1(), "rule__FeatureModel__NameAssignment_1");
 					put(grammarAccess.getFeatureModelAccess().getFeatureAssignment_2(), "rule__FeatureModel__FeatureAssignment_2");
 					put(grammarAccess.getAtomicFeatureAccess().getOptionalAssignment_1(), "rule__AtomicFeature__OptionalAssignment_1");
@@ -116,8 +120,7 @@ public class ExplicitOperationsParser extends AbstractContentAssistParser {
 					put(grammarAccess.getArtifactParameterAccess().getArtifactAssignment_2(), "rule__ArtifactParameter__ArtifactAssignment_2");
 					put(grammarAccess.getCompositionAccess().getNameAssignment_1(), "rule__Composition__NameAssignment_1");
 					put(grammarAccess.getCompositionAccess().getOperationAssignment_3(), "rule__Composition__OperationAssignment_3");
-					put(grammarAccess.getCompositionAccess().getActivationAssignment_6(), "rule__Composition__ActivationAssignment_6");
-					put(grammarAccess.getCompositionAccess().getParametersAssignment_8(), "rule__Composition__ParametersAssignment_8");
+					put(grammarAccess.getCompositionAccess().getParametersAssignment_5(), "rule__Composition__ParametersAssignment_5");
 					put(grammarAccess.getCompositionParameterAccess().getNameAssignment_0(), "rule__CompositionParameter__NameAssignment_0");
 					put(grammarAccess.getCompositionParameterAccess().getArtifactAssignment_2(), "rule__CompositionParameter__ArtifactAssignment_2");
 				}

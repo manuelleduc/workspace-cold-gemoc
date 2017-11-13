@@ -29,7 +29,6 @@ import org.eclipse.xtext.resource.IEObjectDescription;
 import org.eclipse.xtext.scoping.IScope;
 import org.eclipse.xtext.scoping.impl.MapBasedScope;
 import org.eclipse.xtext.xbase.lib.Functions.Function1;
-import org.eclipse.xtext.xbase.lib.InputOutput;
 import org.eclipse.xtext.xbase.lib.IteratorExtensions;
 import org.eclipse.xtext.xbase.lib.ListExtensions;
 
@@ -43,7 +42,6 @@ import org.eclipse.xtext.xbase.lib.ListExtensions;
 public class ExplicitOperationsScopeProvider extends AbstractExplicitOperationsScopeProvider {
   @Override
   public IScope getScope(final EObject context, final EReference reference) {
-    InputOutput.<EReference>println(reference);
     IScope _xifexpression = null;
     boolean _equals = Objects.equal(reference, ExplicitOperationsPackage.Literals.COMPOSITION_PARAMETER__NAME);
     if (_equals) {
@@ -101,7 +99,28 @@ public class ExplicitOperationsScopeProvider extends AbstractExplicitOperationsS
           }
           _xifexpression_2 = _xblockexpression_2;
         } else {
-          _xifexpression_2 = super.getScope(context, reference);
+          IScope _xifexpression_3 = null;
+          boolean _equals_3 = Objects.equal(reference, ExplicitOperationsPackage.Literals.ACTIVATION__CONSTRAINTS);
+          if (_equals_3) {
+            IScope _xblockexpression_3 = null;
+            {
+              EObject _rootContainer = EcoreUtil2.getRootContainer(context);
+              final Model root = ((Model) _rootContainer);
+              TreeIterator<EObject> _eAllContents = root.eAllContents();
+              Iterator<Feature> _filter = Iterators.<Feature>filter(_eAllContents, Feature.class);
+              final Function1<Feature, IEObjectDescription> _function = (Feature it) -> {
+                String _name = it.getName();
+                return EObjectDescription.create(_name, it);
+              };
+              Iterator<IEObjectDescription> _map = IteratorExtensions.<Feature, IEObjectDescription>map(_filter, _function);
+              final List<IEObjectDescription> map = IteratorExtensions.<IEObjectDescription>toList(_map);
+              _xblockexpression_3 = MapBasedScope.createScope(IScope.NULLSCOPE, map);
+            }
+            _xifexpression_3 = _xblockexpression_3;
+          } else {
+            _xifexpression_3 = super.getScope(context, reference);
+          }
+          _xifexpression_2 = _xifexpression_3;
         }
         _xifexpression_1 = _xifexpression_2;
       }

@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Rename package &apos;cst.cstevallang.aspects&apos; to &apos;cst.eval.sem.cst.aspects&apos;&#x0A;- Original project: &apos;cst.cstevallang&apos;&#x0A;- Original element: &apos;cst.cstevallang/src-gen/cst.cstevallang.aspects&apos;&#x0A;- Renamed element: &apos;cst.cstevallang/src-gen/cst.eval.sem.cst.aspects&apos;&#x0A;- Update references to refactored element&#x0A;- Update textual occurrences in comments and strings" description="Rename package &apos;cst.cstevallang.aspects&apos;" flags="589830" hierarchical="false" id="org.eclipse.jdt.ui.rename.package" input="/src-gen&lt;cst.cstevallang.aspects" name="cst.eval.sem.cst.aspects" qualified="false" references="true" stamp="1508250149480" textual="false" version="1.0"/>
-</session>

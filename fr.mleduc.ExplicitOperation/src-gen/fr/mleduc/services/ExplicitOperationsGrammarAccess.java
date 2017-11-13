@@ -41,14 +41,16 @@ public class ExplicitOperationsGrammarAccess extends AbstractGrammarElementFinde
 		private final RuleCall cCompositionsCompositionParserRuleCall_2_3_0 = (RuleCall)cCompositionsAssignment_2_3.eContents().get(0);
 		private final Assignment cFeatureModelsAssignment_2_4 = (Assignment)cAlternatives_2.eContents().get(4);
 		private final RuleCall cFeatureModelsFeatureModelParserRuleCall_2_4_0 = (RuleCall)cFeatureModelsAssignment_2_4.eContents().get(0);
+		private final Assignment cActivationsAssignment_2_5 = (Assignment)cAlternatives_2.eContents().get(5);
+		private final RuleCall cActivationsActivationParserRuleCall_2_5_0 = (RuleCall)cActivationsAssignment_2_5.eContents().get(0);
 		
 		//Model:
 		//	'package' name=ID (languages+=Language | operations+=Operation | artifacts+=Artifact | compositions+=Composition |
-		//	featureModels+=FeatureModel)*;
+		//	featureModels+=FeatureModel | activations+=Activation)*;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'package' name=ID (languages+=Language | operations+=Operation | artifacts+=Artifact | compositions+=Composition |
-		//featureModels+=FeatureModel)*
+		//featureModels+=FeatureModel | activations+=Activation)*
 		public Group getGroup() { return cGroup; }
 		
 		//'package'
@@ -61,7 +63,7 @@ public class ExplicitOperationsGrammarAccess extends AbstractGrammarElementFinde
 		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
 		
 		//(languages+=Language | operations+=Operation | artifacts+=Artifact | compositions+=Composition |
-		//featureModels+=FeatureModel)*
+		//featureModels+=FeatureModel | activations+=Activation)*
 		public Alternatives getAlternatives_2() { return cAlternatives_2; }
 		
 		//languages+=Language
@@ -93,6 +95,51 @@ public class ExplicitOperationsGrammarAccess extends AbstractGrammarElementFinde
 		
 		//FeatureModel
 		public RuleCall getFeatureModelsFeatureModelParserRuleCall_2_4_0() { return cFeatureModelsFeatureModelParserRuleCall_2_4_0; }
+		
+		//activations+=Activation
+		public Assignment getActivationsAssignment_2_5() { return cActivationsAssignment_2_5; }
+		
+		//Activation
+		public RuleCall getActivationsActivationParserRuleCall_2_5_0() { return cActivationsActivationParserRuleCall_2_5_0; }
+	}
+	public class ActivationElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fr.mleduc.ExplicitOperations.Activation");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cActivateKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cReferencesAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final CrossReference cReferencesReferentiableCrossReference_1_0 = (CrossReference)cReferencesAssignment_1.eContents().get(0);
+		private final RuleCall cReferencesReferentiableIDTerminalRuleCall_1_0_1 = (RuleCall)cReferencesReferentiableCrossReference_1_0.eContents().get(1);
+		private final Keyword cWhereKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Assignment cConstraintsAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cConstraintsPropositionParserRuleCall_3_0 = (RuleCall)cConstraintsAssignment_3.eContents().get(0);
+		
+		//Activation:
+		//	'activate' references+=[Referentiable]* 'where' constraints=Proposition;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'activate' references+=[Referentiable]* 'where' constraints=Proposition
+		public Group getGroup() { return cGroup; }
+		
+		//'activate'
+		public Keyword getActivateKeyword_0() { return cActivateKeyword_0; }
+		
+		//references+=[Referentiable]*
+		public Assignment getReferencesAssignment_1() { return cReferencesAssignment_1; }
+		
+		//[Referentiable]
+		public CrossReference getReferencesReferentiableCrossReference_1_0() { return cReferencesReferentiableCrossReference_1_0; }
+		
+		//ID
+		public RuleCall getReferencesReferentiableIDTerminalRuleCall_1_0_1() { return cReferencesReferentiableIDTerminalRuleCall_1_0_1; }
+		
+		//'where'
+		public Keyword getWhereKeyword_2() { return cWhereKeyword_2; }
+		
+		//constraints=Proposition
+		public Assignment getConstraintsAssignment_3() { return cConstraintsAssignment_3; }
+		
+		//Proposition
+		public RuleCall getConstraintsPropositionParserRuleCall_3_0() { return cConstraintsPropositionParserRuleCall_3_0; }
 	}
 	public class FeatureModelElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fr.mleduc.ExplicitOperations.FeatureModel");
@@ -941,22 +988,17 @@ public class ExplicitOperationsGrammarAccess extends AbstractGrammarElementFinde
 		private final Assignment cOperationAssignment_3 = (Assignment)cGroup.eContents().get(3);
 		private final CrossReference cOperationOperationCrossReference_3_0 = (CrossReference)cOperationAssignment_3.eContents().get(0);
 		private final RuleCall cOperationOperationIDTerminalRuleCall_3_0_1 = (RuleCall)cOperationOperationCrossReference_3_0.eContents().get(1);
-		private final Keyword cActivationKeyword_4 = (Keyword)cGroup.eContents().get(4);
-		private final Keyword cEqualsSignKeyword_5 = (Keyword)cGroup.eContents().get(5);
-		private final Assignment cActivationAssignment_6 = (Assignment)cGroup.eContents().get(6);
-		private final RuleCall cActivationPropositionParserRuleCall_6_0 = (RuleCall)cActivationAssignment_6.eContents().get(0);
-		private final Keyword cLeftSquareBracketKeyword_7 = (Keyword)cGroup.eContents().get(7);
-		private final Assignment cParametersAssignment_8 = (Assignment)cGroup.eContents().get(8);
-		private final RuleCall cParametersCompositionParameterParserRuleCall_8_0 = (RuleCall)cParametersAssignment_8.eContents().get(0);
-		private final Keyword cRightSquareBracketKeyword_9 = (Keyword)cGroup.eContents().get(9);
+		private final Keyword cLeftSquareBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Assignment cParametersAssignment_5 = (Assignment)cGroup.eContents().get(5);
+		private final RuleCall cParametersCompositionParameterParserRuleCall_5_0 = (RuleCall)cParametersAssignment_5.eContents().get(0);
+		private final Keyword cRightSquareBracketKeyword_6 = (Keyword)cGroup.eContents().get(6);
 		
 		//Composition:
-		//	'composition' name=ID '::' operation=[Operation] 'activation' '=' activation=Proposition '['
+		//	'composition' name=ID '::' operation=[Operation] '['
 		//	parameters+=CompositionParameter* ']';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'composition' name=ID '::' operation=[Operation] 'activation' '=' activation=Proposition '['
-		//parameters+=CompositionParameter* ']'
+		//'composition' name=ID '::' operation=[Operation] '[' parameters+=CompositionParameter* ']'
 		public Group getGroup() { return cGroup; }
 		
 		//'composition'
@@ -980,29 +1022,17 @@ public class ExplicitOperationsGrammarAccess extends AbstractGrammarElementFinde
 		//ID
 		public RuleCall getOperationOperationIDTerminalRuleCall_3_0_1() { return cOperationOperationIDTerminalRuleCall_3_0_1; }
 		
-		//'activation'
-		public Keyword getActivationKeyword_4() { return cActivationKeyword_4; }
-		
-		//'='
-		public Keyword getEqualsSignKeyword_5() { return cEqualsSignKeyword_5; }
-		
-		//activation=Proposition
-		public Assignment getActivationAssignment_6() { return cActivationAssignment_6; }
-		
-		//Proposition
-		public RuleCall getActivationPropositionParserRuleCall_6_0() { return cActivationPropositionParserRuleCall_6_0; }
-		
 		//'['
-		public Keyword getLeftSquareBracketKeyword_7() { return cLeftSquareBracketKeyword_7; }
+		public Keyword getLeftSquareBracketKeyword_4() { return cLeftSquareBracketKeyword_4; }
 		
 		//parameters+=CompositionParameter*
-		public Assignment getParametersAssignment_8() { return cParametersAssignment_8; }
+		public Assignment getParametersAssignment_5() { return cParametersAssignment_5; }
 		
 		//CompositionParameter
-		public RuleCall getParametersCompositionParameterParserRuleCall_8_0() { return cParametersCompositionParameterParserRuleCall_8_0; }
+		public RuleCall getParametersCompositionParameterParserRuleCall_5_0() { return cParametersCompositionParameterParserRuleCall_5_0; }
 		
 		//']'
-		public Keyword getRightSquareBracketKeyword_9() { return cRightSquareBracketKeyword_9; }
+		public Keyword getRightSquareBracketKeyword_6() { return cRightSquareBracketKeyword_6; }
 	}
 	public class CompositionParameterElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fr.mleduc.ExplicitOperations.CompositionParameter");
@@ -1046,6 +1076,7 @@ public class ExplicitOperationsGrammarAccess extends AbstractGrammarElementFinde
 	
 	
 	private final ModelElements pModel;
+	private final ActivationElements pActivation;
 	private final FeatureModelElements pFeatureModel;
 	private final FeatureElements pFeature;
 	private final AtomicFeatureElements pAtomicFeature;
@@ -1079,6 +1110,7 @@ public class ExplicitOperationsGrammarAccess extends AbstractGrammarElementFinde
 		this.grammar = internalFindGrammar(grammarProvider);
 		this.gaTerminals = gaTerminals;
 		this.pModel = new ModelElements();
+		this.pActivation = new ActivationElements();
 		this.pFeatureModel = new FeatureModelElements();
 		this.pFeature = new FeatureElements();
 		this.pAtomicFeature = new AtomicFeatureElements();
@@ -1132,13 +1164,23 @@ public class ExplicitOperationsGrammarAccess extends AbstractGrammarElementFinde
 	
 	//Model:
 	//	'package' name=ID (languages+=Language | operations+=Operation | artifacts+=Artifact | compositions+=Composition |
-	//	featureModels+=FeatureModel)*;
+	//	featureModels+=FeatureModel | activations+=Activation)*;
 	public ModelElements getModelAccess() {
 		return pModel;
 	}
 	
 	public ParserRule getModelRule() {
 		return getModelAccess().getRule();
+	}
+	
+	//Activation:
+	//	'activate' references+=[Referentiable]* 'where' constraints=Proposition;
+	public ActivationElements getActivationAccess() {
+		return pActivation;
+	}
+	
+	public ParserRule getActivationRule() {
+		return getActivationAccess().getRule();
 	}
 	
 	//FeatureModel:
@@ -1351,7 +1393,7 @@ public class ExplicitOperationsGrammarAccess extends AbstractGrammarElementFinde
 	}
 	
 	//Composition:
-	//	'composition' name=ID '::' operation=[Operation] 'activation' '=' activation=Proposition '['
+	//	'composition' name=ID '::' operation=[Operation] '['
 	//	parameters+=CompositionParameter* ']';
 	public CompositionElements getCompositionAccess() {
 		return pComposition;

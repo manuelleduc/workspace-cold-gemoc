@@ -81,6 +81,11 @@ public class ExplicitOperationsAdapterFactory extends AdapterFactoryImpl
         return createModelAdapter();
       }
       @Override
+      public Adapter caseActivation(Activation object)
+      {
+        return createActivationAdapter();
+      }
+      @Override
       public Adapter caseFeatureModel(FeatureModel object)
       {
         return createFeatureModelAdapter();
@@ -243,6 +248,21 @@ public class ExplicitOperationsAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createModelAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link fr.mleduc.explicitOperations.Activation <em>Activation</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see fr.mleduc.explicitOperations.Activation
+   * @generated
+   */
+  public Adapter createActivationAdapter()
   {
     return null;
   }

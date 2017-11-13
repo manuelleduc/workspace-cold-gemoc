@@ -14,6 +14,14 @@
         eType="#//Composition" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="featureModels" upperBound="-1"
         eType="#//FeatureModel" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="activations" upperBound="-1"
+        eType="#//Activation" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Activation">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="references" unique="false"
+        upperBound="-1" eType="#//Referentiable"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="constraints" eType="#//Proposition"
+        containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="FeatureModel">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -70,8 +78,6 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Composition" eSuperTypes="#//Referentiable">
     <eStructuralFeatures xsi:type="ecore:EReference" name="operation" eType="#//Operation"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="activation" eType="#//Proposition"
-        containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="parameters" upperBound="-1"
         eType="#//CompositionParameter" containment="true"/>
   </eClassifiers>

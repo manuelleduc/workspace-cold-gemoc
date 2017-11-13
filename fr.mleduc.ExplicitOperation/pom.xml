@@ -18,6 +18,11 @@
 			<artifactId>pddl4j</artifactId>
 			<version>3.5.0</version>
 		</dependency>
+		<dependency>
+			<groupId>net.sf.tweety</groupId>
+			<artifactId>tweety-full</artifactId>
+			<version>1.9</version>
+		</dependency>
 	</dependencies>
 
 

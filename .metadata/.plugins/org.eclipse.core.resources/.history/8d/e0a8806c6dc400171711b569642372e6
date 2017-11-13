@@ -1,5 +1,0 @@
-package abc.model
-
-class A {
-	val bs = newArrayList<bs>()
-}

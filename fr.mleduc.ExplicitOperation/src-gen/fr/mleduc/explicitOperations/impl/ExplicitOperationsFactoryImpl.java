@@ -66,6 +66,7 @@ public class ExplicitOperationsFactoryImpl extends EFactoryImpl implements Expli
     switch (eClass.getClassifierID())
     {
       case ExplicitOperationsPackage.MODEL: return createModel();
+      case ExplicitOperationsPackage.ACTIVATION: return createActivation();
       case ExplicitOperationsPackage.FEATURE_MODEL: return createFeatureModel();
       case ExplicitOperationsPackage.FEATURE: return createFeature();
       case ExplicitOperationsPackage.PROPOSITION: return createProposition();
@@ -106,6 +107,17 @@ public class ExplicitOperationsFactoryImpl extends EFactoryImpl implements Expli
   {
     ModelImpl model = new ModelImpl();
     return model;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Activation createActivation()
+  {
+    ActivationImpl activation = new ActivationImpl();
+    return activation;
   }
 
   /**

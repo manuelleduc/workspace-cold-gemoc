@@ -5,7 +5,10 @@ generate explicitOperations "http://www.mleduc.fr/ExplicitOperations"
 Model:
 	'package' name=ID
 	(languages+=Language | operations+=Operation | artifacts+=Artifact | compositions+=Composition |
-	featureModels+=FeatureModel)*;
+	featureModels+=FeatureModel | activations+=Activation)*;
+
+Activation:
+	'activate' (references+=[Referentiable|ID])* 'where' constraints=Proposition;
 
 FeatureModel:
 	'FM' name=ID feature=Feature;
@@ -86,7 +89,8 @@ Referentiable:
 	Artifact | Composition;
 
 Composition:
-	'composition' name=ID '::' operation=[Operation|ID] 'activation' '=' activation=Proposition '[' parameters+=CompositionParameter* ']';
+	'composition' name=ID '::' operation=[Operation|ID] '['
+	parameters+=CompositionParameter* ']';
 
 CompositionParameter:
 	name=[OperationParameter|ID] '=>' artifact=[Referentiable|ID];

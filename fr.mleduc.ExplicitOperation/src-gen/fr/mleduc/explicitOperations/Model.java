@@ -22,6 +22,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link fr.mleduc.explicitOperations.Model#getArtifacts <em>Artifacts</em>}</li>
  *   <li>{@link fr.mleduc.explicitOperations.Model#getCompositions <em>Compositions</em>}</li>
  *   <li>{@link fr.mleduc.explicitOperations.Model#getFeatureModels <em>Feature Models</em>}</li>
+ *   <li>{@link fr.mleduc.explicitOperations.Model#getActivations <em>Activations</em>}</li>
  * </ul>
  *
  * @see fr.mleduc.explicitOperations.ExplicitOperationsPackage#getModel()
@@ -135,5 +136,21 @@ public interface Model extends EObject
    * @generated
    */
   EList<FeatureModel> getFeatureModels();
+
+  /**
+   * Returns the value of the '<em><b>Activations</b></em>' containment reference list.
+   * The list contents are of type {@link fr.mleduc.explicitOperations.Activation}.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Activations</em>' containment reference list isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Activations</em>' containment reference list.
+   * @see fr.mleduc.explicitOperations.ExplicitOperationsPackage#getModel_Activations()
+   * @model containment="true"
+   * @generated
+   */
+  EList<Activation> getActivations();
 
 } // Model

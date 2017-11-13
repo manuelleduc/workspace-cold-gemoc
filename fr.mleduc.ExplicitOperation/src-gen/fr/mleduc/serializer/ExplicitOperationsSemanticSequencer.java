@@ -4,6 +4,7 @@
 package fr.mleduc.serializer;
 
 import com.google.inject.Inject;
+import fr.mleduc.explicitOperations.Activation;
 import fr.mleduc.explicitOperations.And;
 import fr.mleduc.explicitOperations.Artifact;
 import fr.mleduc.explicitOperations.ArtifactParameter;
@@ -54,6 +55,9 @@ public class ExplicitOperationsSemanticSequencer extends AbstractDelegatingSeman
 		Set<Parameter> parameters = context.getEnabledBooleanParameters();
 		if (epackage == ExplicitOperationsPackage.eINSTANCE)
 			switch (semanticObject.eClass().getClassifierID()) {
+			case ExplicitOperationsPackage.ACTIVATION:
+				sequence_Activation(context, (Activation) semanticObject); 
+				return; 
 			case ExplicitOperationsPackage.AND:
 				sequence_And(context, (And) semanticObject); 
 				return; 
@@ -127,6 +131,18 @@ public class ExplicitOperationsSemanticSequencer extends AbstractDelegatingSeman
 		if (errorAcceptor != null)
 			errorAcceptor.accept(diagnosticProvider.createInvalidContextOrTypeDiagnostic(semanticObject, context));
 	}
+	
+	/**
+	 * Contexts:
+	 *     Activation returns Activation
+	 *
+	 * Constraint:
+	 *     (references+=[Referentiable|ID]* constraints=Proposition)
+	 */
+	protected void sequence_Activation(ISerializationContext context, Activation semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
 	
 	/**
 	 * Contexts:
@@ -289,7 +305,7 @@ public class ExplicitOperationsSemanticSequencer extends AbstractDelegatingSeman
 	 *     Composition returns Composition
 	 *
 	 * Constraint:
-	 *     (name=ID operation=[Operation|ID] activation=Proposition parameters+=CompositionParameter*)
+	 *     (name=ID operation=[Operation|ID] parameters+=CompositionParameter*)
 	 */
 	protected void sequence_Composition(ISerializationContext context, Composition semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -415,7 +431,17 @@ public class ExplicitOperationsSemanticSequencer extends AbstractDelegatingSeman
 	 *     Model returns Model
 	 *
 	 * Constraint:
-	 *     (name=ID (languages+=Language | operations+=Operation | artifacts+=Artifact | compositions+=Composition | featureModels+=FeatureModel)*)
+	 *     (
+	 *         name=ID 
+	 *         (
+	 *             languages+=Language | 
+	 *             operations+=Operation | 
+	 *             artifacts+=Artifact | 
+	 *             compositions+=Composition | 
+	 *             featureModels+=FeatureModel | 
+	 *             activations+=Activation
+	 *         )*
+	 *     )
 	 */
 	protected void sequence_Model(ISerializationContext context, Model semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

@@ -33,6 +33,15 @@ public interface ExplicitOperationsFactory extends EFactory
   Model createModel();
 
   /**
+   * Returns a new object of class '<em>Activation</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Activation</em>'.
+   * @generated
+   */
+  Activation createActivation();
+
+  /**
    * Returns a new object of class '<em>Feature Model</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

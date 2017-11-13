@@ -3,6 +3,7 @@
  */
 package fr.mleduc.explicitOperations.impl;
 
+import fr.mleduc.explicitOperations.Activation;
 import fr.mleduc.explicitOperations.And;
 import fr.mleduc.explicitOperations.Artifact;
 import fr.mleduc.explicitOperations.ArtifactParameter;
@@ -54,6 +55,13 @@ public class ExplicitOperationsPackageImpl extends EPackageImpl implements Expli
    * @generated
    */
   private EClass modelEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass activationEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -368,6 +376,46 @@ public class ExplicitOperationsPackageImpl extends EPackageImpl implements Expli
   public EReference getModel_FeatureModels()
   {
     return (EReference)modelEClass.getEStructuralFeatures().get(5);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getModel_Activations()
+  {
+    return (EReference)modelEClass.getEStructuralFeatures().get(6);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getActivation()
+  {
+    return activationEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getActivation_References()
+  {
+    return (EReference)activationEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getActivation_Constraints()
+  {
+    return (EReference)activationEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -735,19 +783,9 @@ public class ExplicitOperationsPackageImpl extends EPackageImpl implements Expli
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getComposition_Activation()
-  {
-    return (EReference)compositionEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EReference getComposition_Parameters()
   {
-    return (EReference)compositionEClass.getEStructuralFeatures().get(2);
+    return (EReference)compositionEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -1057,6 +1095,11 @@ public class ExplicitOperationsPackageImpl extends EPackageImpl implements Expli
     createEReference(modelEClass, MODEL__ARTIFACTS);
     createEReference(modelEClass, MODEL__COMPOSITIONS);
     createEReference(modelEClass, MODEL__FEATURE_MODELS);
+    createEReference(modelEClass, MODEL__ACTIVATIONS);
+
+    activationEClass = createEClass(ACTIVATION);
+    createEReference(activationEClass, ACTIVATION__REFERENCES);
+    createEReference(activationEClass, ACTIVATION__CONSTRAINTS);
 
     featureModelEClass = createEClass(FEATURE_MODEL);
     createEAttribute(featureModelEClass, FEATURE_MODEL__NAME);
@@ -1106,7 +1149,6 @@ public class ExplicitOperationsPackageImpl extends EPackageImpl implements Expli
 
     compositionEClass = createEClass(COMPOSITION);
     createEReference(compositionEClass, COMPOSITION__OPERATION);
-    createEReference(compositionEClass, COMPOSITION__ACTIVATION);
     createEReference(compositionEClass, COMPOSITION__PARAMETERS);
 
     compositionParameterEClass = createEClass(COMPOSITION_PARAMETER);
@@ -1202,6 +1244,11 @@ public class ExplicitOperationsPackageImpl extends EPackageImpl implements Expli
     initEReference(getModel_Artifacts(), this.getArtifact(), null, "artifacts", null, 0, -1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getModel_Compositions(), this.getComposition(), null, "compositions", null, 0, -1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getModel_FeatureModels(), this.getFeatureModel(), null, "featureModels", null, 0, -1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getModel_Activations(), this.getActivation(), null, "activations", null, 0, -1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(activationEClass, Activation.class, "Activation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getActivation_References(), this.getReferentiable(), null, "references", null, 0, -1, Activation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getActivation_Constraints(), this.getProposition(), null, "constraints", null, 0, 1, Activation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(featureModelEClass, FeatureModel.class, "FeatureModel", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getFeatureModel_Name(), ecorePackage.getEString(), "name", null, 0, 1, FeatureModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1251,7 +1298,6 @@ public class ExplicitOperationsPackageImpl extends EPackageImpl implements Expli
 
     initEClass(compositionEClass, Composition.class, "Composition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getComposition_Operation(), this.getOperation(), null, "operation", null, 0, 1, Composition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getComposition_Activation(), this.getProposition(), null, "activation", null, 0, 1, Composition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getComposition_Parameters(), this.getCompositionParameter(), null, "parameters", null, 0, -1, Composition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(compositionParameterEClass, CompositionParameter.class, "CompositionParameter", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

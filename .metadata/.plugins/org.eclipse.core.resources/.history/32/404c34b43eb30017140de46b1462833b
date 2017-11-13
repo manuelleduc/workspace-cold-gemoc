@@ -1,9 +1,0 @@
-package expr.eval.sem
-
-import expr.Expr
-import fr.inria.diverse.k3.al.annotationprocessor.Aspect
-
-@Aspect(className=Expr)
-abstract class ExprEvalAspect {
-	def long eval()
-}

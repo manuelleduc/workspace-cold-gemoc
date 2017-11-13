@@ -13,6 +13,11 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ExplicitOperations.ecore#//Model/artifacts"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ExplicitOperations.ecore#//Model/compositions"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ExplicitOperations.ecore#//Model/featureModels"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ExplicitOperations.ecore#//Model/activations"/>
+    </genClasses>
+    <genClasses ecoreClass="ExplicitOperations.ecore#//Activation">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ExplicitOperations.ecore#//Activation/references"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ExplicitOperations.ecore#//Activation/constraints"/>
     </genClasses>
     <genClasses ecoreClass="ExplicitOperations.ecore#//FeatureModel">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ExplicitOperations.ecore#//FeatureModel/name"/>
@@ -60,7 +65,6 @@
     </genClasses>
     <genClasses ecoreClass="ExplicitOperations.ecore#//Composition">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ExplicitOperations.ecore#//Composition/operation"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ExplicitOperations.ecore#//Composition/activation"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ExplicitOperations.ecore#//Composition/parameters"/>
     </genClasses>
     <genClasses ecoreClass="ExplicitOperations.ecore#//CompositionParameter">

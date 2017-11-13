@@ -3,7 +3,25 @@
  */
 package fr.mleduc.validation;
 
+import com.google.inject.Inject;
+import fr.mleduc.explicitOperations.ExplicitOperationsPackage;
+import fr.mleduc.explicitOperations.Feature;
+import fr.mleduc.explicitOperations.FeatureModel;
+import fr.mleduc.explicitOperations.Proposition;
+import fr.mleduc.util.FM2Proposition;
+import fr.mleduc.util.PrettyPrintProposition;
+import fr.mleduc.util.Proposition2Tweety;
+import fr.mleduc.util.TweetyUtil;
 import fr.mleduc.validation.AbstractExplicitOperationsValidator;
+import net.sf.tweety.logics.pl.syntax.Disjunction;
+import net.sf.tweety.logics.pl.syntax.Negation;
+import net.sf.tweety.logics.pl.syntax.PropositionalFormula;
+import net.sf.tweety.logics.pl.syntax.Tautology;
+import org.eclipse.emf.ecore.EAttribute;
+import org.eclipse.xtend2.lib.StringConcatenation;
+import org.eclipse.xtext.validation.Check;
+import org.eclipse.xtext.xbase.lib.Extension;
+import org.eclipse.xtext.xbase.lib.InputOutput;
 
 /**
  * This class contains custom validation rules.
@@ -12,4 +30,62 @@ import fr.mleduc.validation.AbstractExplicitOperationsValidator;
  */
 @SuppressWarnings("all")
 public class ExplicitOperationsValidator extends AbstractExplicitOperationsValidator {
+  private final String FM_UNSATISFIABLE = "FM_UNSATISFIABLE";
+  
+  @Inject
+  @Extension
+  private FM2Proposition _fM2Proposition;
+  
+  @Inject
+  @Extension
+  private Proposition2Tweety _proposition2Tweety;
+  
+  @Inject
+  @Extension
+  private TweetyUtil _tweetyUtil;
+  
+  @Inject
+  @Extension
+  private PrettyPrintProposition _prettyPrintProposition;
+  
+  @Check
+  public void testFMValid(final FeatureModel fm) {
+    Feature _feature = fm.getFeature();
+    final Proposition prop = this._fM2Proposition.toProposition(_feature);
+    StringConcatenation _builder = new StringConcatenation();
+    String _name = fm.getName();
+    _builder.append(_name, "");
+    _builder.append(" = ");
+    String _pretty = this._prettyPrintProposition.pretty(prop, 10);
+    _builder.append(_pretty, "");
+    InputOutput.<String>println(_builder.toString());
+    final PropositionalFormula proposition = this._proposition2Tweety.toTweety(prop);
+    PropositionalFormula _xifexpression = null;
+    Feature _feature_1 = fm.getFeature();
+    boolean _isOptional = _feature_1.isOptional();
+    boolean _not = (!_isOptional);
+    if (_not) {
+      Tautology _tautology = new Tautology();
+      Negation _negation = new Negation(_tautology);
+      _xifexpression = new Disjunction(_negation, proposition);
+    } else {
+      _xifexpression = proposition;
+    }
+    final PropositionalFormula finalProp = _xifexpression;
+    StringConcatenation _builder_1 = new StringConcatenation();
+    String _name_1 = fm.getName();
+    _builder_1.append(_name_1, "");
+    _builder_1.append(" = ");
+    _builder_1.append(finalProp, "");
+    InputOutput.<String>println(_builder_1.toString());
+    long _count = this._tweetyUtil.count(finalProp);
+    boolean _equals = (_count == 0L);
+    if (_equals) {
+      StringConcatenation _builder_2 = new StringConcatenation();
+      _builder_2.append("The feature model is unsatisfiable");
+      EAttribute _featureModel_Name = ExplicitOperationsPackage.eINSTANCE.getFeatureModel_Name();
+      this.error(_builder_2.toString(), fm, _featureModel_Name, 
+        this.FM_UNSATISFIABLE);
+    }
+  }
 }

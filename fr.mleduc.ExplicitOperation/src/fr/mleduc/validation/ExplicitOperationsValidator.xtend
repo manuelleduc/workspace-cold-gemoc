@@ -3,23 +3,52 @@
  */
 package fr.mleduc.validation
 
+import com.google.inject.Inject
+import fr.mleduc.explicitOperations.ExplicitOperationsPackage
+import fr.mleduc.explicitOperations.FeatureModel
+import fr.mleduc.util.FM2Proposition
+import fr.mleduc.util.PrettyPrintProposition
+import fr.mleduc.util.Proposition2Tweety
+import fr.mleduc.util.TweetyUtil
+import org.eclipse.xtext.validation.Check
+import net.sf.tweety.logics.pl.syntax.Tautology
+import net.sf.tweety.logics.pl.syntax.Negation
+import net.sf.tweety.logics.pl.syntax.Disjunction
 
 /**
  * This class contains custom validation rules. 
- *
+ * 
  * See https://www.eclipse.org/Xtext/documentation/303_runtime_concepts.html#validation
  */
 class ExplicitOperationsValidator extends AbstractExplicitOperationsValidator {
-	
-//	public static val INVALID_NAME = 'invalidName'
-//
-//	@Check
-//	def checkGreetingStartsWithCapital(Greeting greeting) {
-//		if (!Character.isUpperCase(greeting.name.charAt(0))) {
-//			warning('Name should start with a capital', 
-//					ExplicitOperationsPackage.Literals.GREETING__NAME,
-//					INVALID_NAME)
-//		}
-//	}
-	
+
+	val FM_UNSATISFIABLE = "FM_UNSATISFIABLE"
+
+	@Inject extension FM2Proposition
+	@Inject extension Proposition2Tweety
+	@Inject extension TweetyUtil
+	@Inject extension PrettyPrintProposition
+
+	@Check
+	def void testFMValid(FeatureModel fm) {
+		/*
+		 * 1 convert feature model to proposition logic
+		 * 2 test if satisfiable
+		 * 3 profit 
+		 */
+		val prop = fm.feature.toProposition
+		println('''«fm.name» = «prop.pretty(10)»''')
+		val proposition = prop.toTweety
+		val finalProp = if(!fm.feature.isOptional) {
+			new Disjunction(new Negation(new Tautology()), proposition)
+		} else proposition
+		println('''«fm.name» = «finalProp»''')
+
+
+		if (finalProp.count == 0L) {
+			error('''The feature model is unsatisfiable''', fm, ExplicitOperationsPackage::eINSTANCE.featureModel_Name,
+				FM_UNSATISFIABLE)
+		}
+	}
+
 }

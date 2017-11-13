@@ -1,9 +1,0 @@
-grammar fr.mleduc.ComposeArtifacts with org.eclipse.xtext.common.Terminals
-
-generate composeArtifacts "http://www.mleduc.fr/ComposeArtifacts"
-
-Model:
-	greetings+=Greeting*;
-	
-Greeting:
-	'Hello' name=ID '!';

@@ -1,5 +1,0 @@
-# List of the Java classes that have been aspectized and name of the aspect classes separated by comma
-	multadd.multaddlang.expr_cst_mult_add.Add = eval.expr_cst_mult_add.aspects.AddAspect
-	multadd.multaddlang.expr_cst_mult_add.Expr = eval.expr_cst_mult_add.aspects.ExprAspect
-	multadd.multaddlang.expr_cst_mult_add.Mult = eval.expr_cst_mult_add.aspects.MultAspect
-	multadd.multaddlang.expr_cst_mult_add.Cst = eval.expr_cst_mult_add.aspects.CstAspect
